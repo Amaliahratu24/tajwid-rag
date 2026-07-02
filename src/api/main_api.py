@@ -7,7 +7,7 @@ Menyatukan: retriever.py (pencarian dokumen) + generator.py (LLM Groq)
 Jalankan:
     uvicorn src.api.main_api:app --reload --port 8000
 
-Endpoint utama buat Fitri (frontend):
+Endpoint utama buat (frontend):
     POST /ask   body: {"pertanyaan": "...", "session_id": 1}
     -> {jawaban, sumber, is_grounded, grounding_score, question_id, answer_id}
 

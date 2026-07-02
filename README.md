@@ -71,7 +71,7 @@ dan `sentence-transformers`. Tunggu sampai selesai tanpa error.
 
 ### 3. Buat file `.env`
 
-Copy file `.env.example` menjadi `.env` di folder utama repo, lalu isi
+Buat file `.env` di folder utama repo, lalu isi
 dengan konfigurasi **laptop kamu sendiri**:
 
 ```

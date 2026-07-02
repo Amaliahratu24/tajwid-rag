@@ -162,7 +162,7 @@ def ask(req: AskRequest):
 
 @app.post("/feedback")
 def kirim_feedback(req: FeedbackRequest):
-    """Rating bintang 1-5 dari user untuk satu jawaban (task Fitri HARI 4)."""
+    """Rating bintang 1-5 dari user untuk satu jawaban (task HARI 4)."""
     if not (1 <= req.rating <= 5):
         raise HTTPException(status_code=400, detail="Rating harus 1-5")
     conn = get_conn()

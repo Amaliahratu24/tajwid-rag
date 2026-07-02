@@ -21,7 +21,8 @@ import mysql.connector
 from dotenv import load_dotenv
 
 from src.retrieval.retriever import retrieve_tajwid
-from src.generation.generator import generate_answer
+from src.generation.generator import generate_answer as generate_answer_groq
+from src.generation.llm_gemini import generate_answer as generate_answer_gemini
 from src.grounding.strict_grounding import check_grounding
 
 load_dotenv()
@@ -41,7 +42,7 @@ DB_CONFIG = {
     "user": os.getenv("DB_USER", "root"),
     "password": os.getenv("DB_PASSWORD", ""),
     "database": os.getenv("DB_NAME", "tajwid_rag"),
-    "port": int(os.getenv("DB_PORT", 4306)),
+    "port": int(os.getenv("DB_PORT", 3306)),
 }
 
 
@@ -52,6 +53,7 @@ def get_conn():
 class AskRequest(BaseModel):
     pertanyaan: str
     session_id: int | None = None
+    model: str | None = "groq"  # pilihan: "groq" atau "gemini"
 
 
 class SessionRequest(BaseModel):
@@ -121,8 +123,14 @@ def ask(req: AskRequest):
         )
     conn.commit()
 
-    # 4. generate jawaban
-    hasil = generate_answer(req.pertanyaan, konteks)
+    
+    # 4. generate jawaban — pilih LLM sesuai request (default: groq)
+    if (req.model or "groq").lower() == "gemini":
+        hasil = generate_answer_gemini(req.pertanyaan, konteks)
+        nama_model = "gemini-2.0-flash"
+    else:
+        hasil = generate_answer_groq(req.pertanyaan, konteks)
+        nama_model = "llama-3.3-70b-versatile"
 
     # 5. strict grounding check
     grounding = check_grounding(hasil["jawaban"], konteks)
@@ -131,7 +139,7 @@ def ask(req: AskRequest):
     cursor.execute(
         """INSERT INTO answers (question_id, jawaban, model_llm, is_grounded, grounding_score)
            VALUES (%s, %s, %s, %s, %s)""",
-        (question_id, hasil["jawaban"], "llama-3.3-70b-versatile",
+        (question_id, hasil["jawaban"], nama_model,
          grounding["is_grounded"], grounding["grounding_score"]),
     )
     answer_id = cursor.lastrowid
@@ -144,6 +152,7 @@ def ask(req: AskRequest):
         "question_id": question_id,
         "answer_id": answer_id,
         "session_id": session_id,
+        "model_digunakan": nama_model,
         "jawaban": hasil["jawaban"],
         "sumber": hasil["sumber"],
         "is_grounded": grounding["is_grounded"],

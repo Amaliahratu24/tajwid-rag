@@ -29,7 +29,7 @@ load_dotenv()
 
 app = FastAPI(title="Tajwid RAG API", version="0.1.0")
 
-# biar Fitri bisa fetch dari localhost:xxxx tanpa CORS error saat development
+# biar bisa fetch dari localhost:xxxx tanpa CORS error saat development
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],

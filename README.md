@@ -52,7 +52,7 @@ Sebelum mulai, pastikan sudah terinstall:
 - **XAMPP** (Apache + MySQL) — [apachefriends.org](https://www.apachefriends.org)
 - **Git** atau **GitHub Desktop**
 - Akun **Groq Cloud** untuk API key gratis — [console.groq.com](https://console.groq.com)
-- Akun **Google AI Studio** untuk API key Gemini gratis — [aistudio.google.com](https://aistudio.google.com)
+- Akun **Google AI Studio** untuk API key Gemini gratis — [aistudio.google.com/api-keys](https://aistudio.google.com/api-keys)
 
 ## 🚀 Langkah Instalasi
 

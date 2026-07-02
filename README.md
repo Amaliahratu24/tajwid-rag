@@ -109,7 +109,7 @@ GEMINI_API_KEY=isi_dengan_api_key_gemini_kamu
 Dapatkan `GROQ_API_KEY` gratis di [console.groq.com](https://console.groq.com)
 → menu **API Keys** → **Create API Key**.
 
-Dapatkan `GEMINI_API_KEY` gratis di [aistudio.google.com](https://aistudio.google.com)
+Dapatkan `GEMINI_API_KEY` gratis di [aistudio.google.com/api-keys](https://aistudio.google.com/api-keys)
 → klik ikon kunci 🔑 di pojok kiri bawah → **Create API key** → pilih
 **Create API key in new project**. Tidak perlu isi data billing/kartu untuk
 pemakaian skala kecil (free tier).

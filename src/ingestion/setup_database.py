@@ -7,7 +7,7 @@ DB_CONFIG = {
     "host": "localhost",
     "user": "root",
     "password": "",  # default XAMPP kosong
-    "port": 3306
+    "port": 4306
 }
 
 def create_database_and_tables():

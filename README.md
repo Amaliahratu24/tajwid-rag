@@ -9,8 +9,8 @@ jawaban LLM diverifikasi otomatis supaya tidak mengarang di luar data yang ada.
 ```
 tajwid-rag/
 ├── main.py                      # jalankan sistem lewat CLI (terminal)
-├── requirements.txt              # daftar library Python
-├── .env.example                  # contoh konfigurasi (copy jadi .env)
+├── requirements.txt             # daftar library Python
+├── .env                         # konfigurasi 
 │
 ├── data/
 │   ├── annaba_raw.json           # 40 ayat An-Naba' (arab, latin, arti)
@@ -34,8 +34,8 @@ tajwid-rag/
     │   └── strict_grounding.py    # verifikasi jawaban benar2 didukung konteks
     │
     ├── database/
-    │   └── setup_app_tables.py    # bikin 6 tabel: users, sessions, questions,
-    │                               #   retrieved_docs, answers, feedback
+    │   └── setup_app_tables.py    # bikin 6 tabel: users, sessions, questions, retrieved_docs, answers, feedback
+    │                               
     │
     └── api/
         └── main_api.py            # FastAPI, endpoint untuk frontend
@@ -185,18 +185,13 @@ Contoh response:
 }
 ```
 
-## 🛠️ Troubleshooting (masalah umum & solusinya)
-
-| Error | Penyebab | Solusi |
-|---|---|---|
-| `ModuleNotFoundError: No module named 'groq'` | Library belum ke-install | `pip install groq` |
-| `groq.GroqError: api_key must be set` | `.env` belum ada / `GROQ_API_KEY` kosong | Buat `.env`, isi API key dari console.groq.com |
-| `Access denied for user 'root'@'localhost'` | Password/port di `.env` tidak sesuai MySQL kamu | Cek password & port MySQL di XAMPP Config |
-| `Unknown database 'tajwid_rag'` | `setup_database.py` belum pernah berhasil jalan | Jalankan ulang setelah koneksi MySQL benar |
-| `Can't connect to MySQL server on 'localhost:xxxx'` | MySQL di XAMPP berhenti/crash | Buka XAMPP Control Panel, Start ulang MySQL |
-| `ModuleNotFoundError: No module named 'src.api'` | Folder/file belum lengkap | Pastikan ada `src/api/__init__.py` dan `main_api.py` |
-
 ## 👥 Kontributor
+ 
+| Nama Lengkap | NIM | Peran |
+|---|---|---|
+| Ratu Amaliah | 11230910000026 | Dataset & RAG Core |
+| Fitria Sintia Wati | 11230910000036 | Frontend |
+| Fadiya Tsabita | 11230910000062 | Evaluasi & Hukum Tajwid |
+| Syifa Auliyah Kusumawardani | 11230910000114 | Backend, API & Database |
 
-Tim: Syifa (Backend, API & Database) · Rara (Dataset & RAG Core) ·
-Fitri (Frontend) · Fadiya (Evaluasi & Hukum Tajwid)
+ 

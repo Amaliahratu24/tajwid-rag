@@ -86,7 +86,7 @@ def create_app_tables():
         ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
     """)
 
-    # 6. feedback — rating bintang dari user (task Fitri di HARI 4, tapi tabelnya di sini)
+    # 6. feedback — rating bintang dari user 
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS feedback (
             id INT AUTO_INCREMENT PRIMARY KEY,

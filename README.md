@@ -1,2 +1,202 @@
-# Tajwid RAG Project 
+# Tajwid RAG — Sistem Tanya Jawab Hukum Tajwid Surah An-Naba'
 
+Sistem RAG (Retrieval-Augmented Generation) untuk menjawab pertanyaan seputar
+hukum tajwid dalam Surah An-Naba', dengan **strict grounding check** —
+jawaban LLM diverifikasi otomatis supaya tidak mengarang di luar data yang ada.
+
+## 📁 Struktur Proyek
+
+```
+tajwid-rag/
+├── main.py                      # jalankan sistem lewat CLI (terminal)
+├── requirements.txt              # daftar library Python
+├── .env.example                  # contoh konfigurasi (copy jadi .env)
+│
+├── data/
+│   ├── annaba_raw.json           # 40 ayat An-Naba' (arab, latin, arti)
+│   ├── tajwid_annaba.json        # data hukum tajwid tiap ayat
+│   └── chromadb/                 # vector database (dibuat otomatis)
+│
+└── src/
+    ├── ingestion/                # menyiapkan data
+    │   ├── fetch_data.py
+    │   ├── create_tajwid_data.py
+    │   ├── build_embeddings.py    # isi ChromaDB
+    │   └── setup_database.py      # bikin tabel MySQL (ayat, hukum_tajwid) + isi data
+    │
+    ├── retrieval/
+    │   └── retriever.py           # cari dokumen tajwid relevan (MySQL + ChromaDB)
+    │
+    ├── generation/
+    │   └── generator.py           # kirim ke LLM (Groq), hasilkan jawaban
+    │
+    ├── grounding/
+    │   └── strict_grounding.py    # verifikasi jawaban benar2 didukung konteks
+    │
+    ├── database/
+    │   └── setup_app_tables.py    # bikin 6 tabel: users, sessions, questions,
+    │                               #   retrieved_docs, answers, feedback
+    │
+    └── api/
+        └── main_api.py            # FastAPI, endpoint untuk frontend
+```
+
+## ✅ Prasyarat
+
+Sebelum mulai, pastikan sudah terinstall:
+- **Python 3.10+** ([python.org](https://python.org))
+- **XAMPP** (Apache + MySQL) — [apachefriends.org](https://www.apachefriends.org)
+- **Git** atau **GitHub Desktop**
+- Akun **Groq Cloud** untuk API key gratis — [console.groq.com](https://console.groq.com)
+
+## 🚀 Langkah Instalasi
+
+### 1. Clone repo
+
+```bash
+git clone https://github.com/Amaliahratu24/tajwid-rag.git
+cd tajwid-rag
+```
+
+Atau pakai **GitHub Desktop**: File → Clone Repository → paste URL repo ini.
+
+### 2. Install semua library Python
+
+```bash
+pip install -r requirements.txt
+```
+
+Proses ini agak lama (beberapa menit) karena ada library besar seperti `torch`
+dan `sentence-transformers`. Tunggu sampai selesai tanpa error.
+
+### 3. Buat file `.env`
+
+Copy file `.env.example` menjadi `.env` di folder utama repo, lalu isi
+dengan konfigurasi **laptop kamu sendiri**:
+
+```
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=
+DB_NAME=tajwid_rag
+DB_PORT=3306
+GROQ_API_KEY=isi_dengan_api_key_groq_kamu
+```
+
+> ⚠️ **PENTING SOAL PORT MYSQL — WAJIB DIBACA**
+>
+> Port MySQL XAMPP **berbeda-beda di tiap laptop**. Defaultnya `3306`,
+> tapi kalau di laptopmu sudah ada software lain yang bentrok di port itu,
+> XAMPP bisa otomatis pindah ke port lain (contoh: penulis README ini
+> pakai port **4306**).
+>
+> **Cara cek port MySQL kamu:**
+> 1. Buka **XAMPP Control Panel**
+> 2. Klik tombol **Config** di baris MySQL → pilih `my.ini`
+> 3. Cari baris `port = ....` di bagian `[mysqld]`
+> 4. Sesuaikan angka itu ke `DB_PORT` di file `.env` kamu
+>
+> Kalau tidak disesuaikan, kamu akan dapat error
+> `Can't connect to MySQL server` atau `Access denied for user 'root'`.
+> Jangan asumsikan port `3306` otomatis benar — **selalu cek dulu**.
+
+Dapatkan `GROQ_API_KEY` gratis di [console.groq.com](https://console.groq.com)
+→ menu **API Keys** → **Create API Key**.
+
+### 4. Nyalakan XAMPP
+
+Buka **XAMPP Control Panel**, klik **Start** pada **Apache** dan **MySQL**,
+pastikan keduanya berwarna hijau.
+
+### 5. Buat database & isi data konten
+
+```bash
+python src/ingestion/setup_database.py
+```
+
+Ini membuat database `tajwid_rag` beserta tabel `ayat` dan `hukum_tajwid`,
+lalu otomatis mengisi datanya dari file JSON di folder `data/`.
+
+Output yang diharapkan:
+```
+Database 'tajwid_rag' dan tabel berhasil dibuat.
+Berhasil import 40 ayat ke tabel 'ayat'.
+Berhasil import ... entri hukum tajwid ke tabel 'hukum_tajwid'.
+Semua data berhasil diimport ke MySQL.
+```
+
+### 6. Buat 6 tabel aplikasi (log aktivitas pengguna)
+
+```bash
+python src/database/setup_app_tables.py
+```
+
+Ini membuat tabel `users`, `sessions`, `questions`, `retrieved_docs`,
+`answers`, `feedback` — untuk mencatat aktivitas tanya-jawab pengguna.
+
+### 7. Coba lewat CLI (opsional, untuk tes cepat)
+
+```bash
+python main.py
+```
+
+Ketik pertanyaan **lengkap** (bukan cuma angka nomor), contoh:
+```
+Sebutkan contoh Mad Thabi'i dalam surah An-Naba
+```
+
+### 8. Jalankan API (untuk dipakai frontend)
+
+```bash
+uvicorn src.api.main_api:app --reload
+```
+
+Biarkan terminal ini tetap terbuka selama server berjalan. Buka
+`http://localhost:8000/docs` di browser untuk melihat dan mencoba semua
+endpoint yang tersedia secara interaktif.
+
+## 📡 Ringkasan Endpoint API
+
+| Method | Endpoint | Kegunaan |
+|---|---|---|
+| GET | `/` | Cek API hidup atau tidak |
+| POST | `/sessions` | Bikin sesi chat baru |
+| POST | `/ask` | Kirim pertanyaan, dapat jawaban + grounding check |
+| POST | `/feedback` | Kirim rating bintang untuk suatu jawaban |
+
+Contoh body request `POST /ask`:
+```json
+{
+  "pertanyaan": "Apa hukum tajwid lafaz Ar-Rahman dalam surah An-Naba?",
+  "session_id": null
+}
+```
+
+Contoh response:
+```json
+{
+  "question_id": 1,
+  "answer_id": 1,
+  "session_id": 1,
+  "jawaban": "...",
+  "sumber": ["Kitab Hidayatus Sibyan"],
+  "is_grounded": true,
+  "grounding_score": 0.633
+}
+```
+
+## 🛠️ Troubleshooting (masalah umum & solusinya)
+
+| Error | Penyebab | Solusi |
+|---|---|---|
+| `ModuleNotFoundError: No module named 'groq'` | Library belum ke-install | `pip install groq` |
+| `groq.GroqError: api_key must be set` | `.env` belum ada / `GROQ_API_KEY` kosong | Buat `.env`, isi API key dari console.groq.com |
+| `Access denied for user 'root'@'localhost'` | Password/port di `.env` tidak sesuai MySQL kamu | Cek password & port MySQL di XAMPP Config |
+| `Unknown database 'tajwid_rag'` | `setup_database.py` belum pernah berhasil jalan | Jalankan ulang setelah koneksi MySQL benar |
+| `Can't connect to MySQL server on 'localhost:xxxx'` | MySQL di XAMPP berhenti/crash | Buka XAMPP Control Panel, Start ulang MySQL |
+| `ModuleNotFoundError: No module named 'src.api'` | Folder/file belum lengkap | Pastikan ada `src/api/__init__.py` dan `main_api.py` |
+
+## 👥 Kontributor
+
+Tim: Syifa (Backend, API & Database) · Rara (Dataset & RAG Core) ·
+Fitri (Frontend) · Fadiya (Evaluasi & Hukum Tajwid)

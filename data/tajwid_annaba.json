@@ -1,0 +1,442 @@
+[
+  {
+    "id": 1,
+    "ayat": 1,
+    "lafaz_arab": "عَمَّ",
+    "transliterasi": "'amma",
+    "hukum": "Idgham Bighunnah",
+    "kategori": "Nun Mati dan Tanwin",
+    "penjelasan": "Berasal dari 'an + ma'. Nun mati bertemu huruf mim, dibaca lebur dengan dengung (ghunnah) selama 2 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 2,
+    "ayat": 1,
+    "lafaz_arab": "يَتَسَاءَلُونَ",
+    "transliterasi": "yatasaa'aluun",
+    "hukum": "Mad Arid Lissukun",
+    "kategori": "Mad Far'i",
+    "penjelasan": "Huruf wawu mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 3,
+    "ayat": 2,
+    "lafaz_arab": "النَّبَإِ",
+    "transliterasi": "an-naba-i",
+    "hukum": "Idgham Syamsiyyah",
+    "kategori": "Alif Lam",
+    "penjelasan": "Alif lam bertemu huruf nun (huruf syamsiyyah), lam dibaca lebur/idgham ke dalam nun dan dibaca dengan tasydid.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 4,
+    "ayat": 2,
+    "lafaz_arab": "الْعَظِيمِ",
+    "transliterasi": "al-'azhiim",
+    "hukum": "Izhar Qamariyyah",
+    "kategori": "Alif Lam",
+    "penjelasan": "Alif lam bertemu huruf ain (huruf qamariyyah), lam dibaca jelas/izhar tanpa dilebur.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 5,
+    "ayat": 3,
+    "lafaz_arab": "الَّذِي",
+    "transliterasi": "alladzii",
+    "hukum": "Idgham Syamsiyyah",
+    "kategori": "Alif Lam",
+    "penjelasan": "Alif lam bertemu huruf lam (huruf syamsiyyah), lam pertama dilebur ke lam berikutnya dan dibaca tasydid.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 6,
+    "ayat": 3,
+    "lafaz_arab": "هُمْ فِيهِ",
+    "transliterasi": "hum fiih",
+    "hukum": "Idgham Bighunnah",
+    "kategori": "Nun Mati dan Tanwin",
+    "penjelasan": "Mim mati bertemu huruf fa — ini sebenarnya izhar syafawi karena mim mati bertemu selain ba/mim, dibaca jelas.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 7,
+    "ayat": 4,
+    "lafaz_arab": "كَلَّا",
+    "transliterasi": "kallaa",
+    "hukum": "Mad Thabi'i",
+    "kategori": "Mad Asli",
+    "penjelasan": "Huruf lam bertemu alif mad, dibaca panjang 2 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 8,
+    "ayat": 5,
+    "lafaz_arab": "كَلَّا سَيَعْلَمُونَ",
+    "transliterasi": "kallaa saya'lamuun",
+    "hukum": "Mad Arid Lissukun",
+    "kategori": "Mad Far'i",
+    "penjelasan": "Wawu mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 9,
+    "ayat": 6,
+    "lafaz_arab": "الْأَرْضَ",
+    "transliterasi": "al-ardha",
+    "hukum": "Izhar Qamariyyah",
+    "kategori": "Alif Lam",
+    "penjelasan": "Alif lam bertemu hamzah (huruf qamariyyah), lam dibaca jelas.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 10,
+    "ayat": 6,
+    "lafaz_arab": "مِهَادًا",
+    "transliterasi": "mihaadaa",
+    "hukum": "Mad Arid Lissukun",
+    "kategori": "Mad Far'i",
+    "penjelasan": "Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 11,
+    "ayat": 7,
+    "lafaz_arab": "الْجِبَالَ",
+    "transliterasi": "al-jibaala",
+    "hukum": "Izhar Qamariyyah",
+    "kategori": "Alif Lam",
+    "penjelasan": "Alif lam bertemu jim (huruf qamariyyah), lam dibaca jelas.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 12,
+    "ayat": 7,
+    "lafaz_arab": "أَوْتَادًا",
+    "transliterasi": "awtaadaa",
+    "hukum": "Mad Arid Lissukun",
+    "kategori": "Mad Far'i",
+    "penjelasan": "Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 13,
+    "ayat": 8,
+    "lafaz_arab": "أَزْوَاجًا",
+    "transliterasi": "azwaajaa",
+    "hukum": "Mad Arid Lissukun",
+    "kategori": "Mad Far'i",
+    "penjelasan": "Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 14,
+    "ayat": 9,
+    "lafaz_arab": "سُبَاتًا",
+    "transliterasi": "subaataa",
+    "hukum": "Mad Arid Lissukun",
+    "kategori": "Mad Far'i",
+    "penjelasan": "Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 15,
+    "ayat": 10,
+    "lafaz_arab": "لِبَاسًا",
+    "transliterasi": "libaasaa",
+    "hukum": "Mad Arid Lissukun",
+    "kategori": "Mad Far'i",
+    "penjelasan": "Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 16,
+    "ayat": 11,
+    "lafaz_arab": "مَعَاشًا",
+    "transliterasi": "ma'aasyaa",
+    "hukum": "Mad Arid Lissukun",
+    "kategori": "Mad Far'i",
+    "penjelasan": "Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 17,
+    "ayat": 12,
+    "lafaz_arab": "شِدَادًا",
+    "transliterasi": "syi daadaa",
+    "hukum": "Mad Arid Lissukun",
+    "kategori": "Mad Far'i",
+    "penjelasan": "Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 18,
+    "ayat": 13,
+    "lafaz_arab": "وَهَّاجًا",
+    "transliterasi": "wahhaajaa",
+    "hukum": "Mad Arid Lissukun",
+    "kategori": "Mad Far'i",
+    "penjelasan": "Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 19,
+    "ayat": 14,
+    "lafaz_arab": "ثَجَّاجًا",
+    "transliterasi": "tsajjaajaa",
+    "hukum": "Mad Arid Lissukun",
+    "kategori": "Mad Far'i",
+    "penjelasan": "Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 20,
+    "ayat": 15,
+    "lafaz_arab": "حَبًّا",
+    "transliterasi": "habbaa",
+    "hukum": "Mad Arid Lissukun",
+    "kategori": "Mad Far'i",
+    "penjelasan": "Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 21,
+    "ayat": 15,
+    "lafaz_arab": "وَنَبَاتًا",
+    "transliterasi": "wa nabaataa",
+    "hukum": "Mad Arid Lissukun",
+    "kategori": "Mad Far'i",
+    "penjelasan": "Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 22,
+    "ayat": 17,
+    "lafaz_arab": "الْفَصْلِ",
+    "transliterasi": "al-fashl",
+    "hukum": "Izhar Qamariyyah",
+    "kategori": "Alif Lam",
+    "penjelasan": "Alif lam bertemu fa (huruf qamariyyah), lam dibaca jelas.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 23,
+    "ayat": 17,
+    "lafaz_arab": "مِيقَاتًا",
+    "transliterasi": "miiqaataa",
+    "hukum": "Mad Arid Lissukun",
+    "kategori": "Mad Far'i",
+    "penjelasan": "Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 24,
+    "ayat": 18,
+    "lafaz_arab": "فَتَأْتُونَ",
+    "transliterasi": "fata'tuun",
+    "hukum": "Mad Arid Lissukun",
+    "kategori": "Mad Far'i",
+    "penjelasan": "Wawu mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 25,
+    "ayat": 20,
+    "lafaz_arab": "سَرَابًا",
+    "transliterasi": "saraabaa",
+    "hukum": "Mad Arid Lissukun",
+    "kategori": "Mad Far'i",
+    "penjelasan": "Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 26,
+    "ayat": 21,
+    "lafaz_arab": "جَهَنَّمَ",
+    "transliterasi": "jahannama",
+    "hukum": "Ghunnah",
+    "kategori": "Ghunnah",
+    "penjelasan": "Huruf nun bertasydid dibaca dengung selama 2 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 27,
+    "ayat": 21,
+    "lafaz_arab": "مِرْصَادًا",
+    "transliterasi": "mirshaadaa",
+    "hukum": "Mad Arid Lissukun",
+    "kategori": "Mad Far'i",
+    "penjelasan": "Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 28,
+    "ayat": 23,
+    "lafaz_arab": "لَابِثِينَ",
+    "transliterasi": "laabitsiin",
+    "hukum": "Mad Thabi'i",
+    "kategori": "Mad Asli",
+    "penjelasan": "Alif setelah lam dan ya setelah tsa, masing-masing dibaca panjang 2 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 29,
+    "ayat": 23,
+    "lafaz_arab": "أَحْقَابًا",
+    "transliterasi": "ahqaabaa",
+    "hukum": "Mad Arid Lissukun",
+    "kategori": "Mad Far'i",
+    "penjelasan": "Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 30,
+    "ayat": 24,
+    "lafaz_arab": "بَارِدًا وَلَا",
+    "transliterasi": "baaridan walaa",
+    "hukum": "Idgham Bighunnah",
+    "kategori": "Nun Mati dan Tanwin",
+    "penjelasan": "Tanwin (nun mati) pada 'baaridan' bertemu huruf wawu, dibaca lebur dengan dengung 2 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 31,
+    "ayat": 25,
+    "lafaz_arab": "غَسَّاقًا",
+    "transliterasi": "ghassaaqaa",
+    "hukum": "Mad Arid Lissukun",
+    "kategori": "Mad Far'i",
+    "penjelasan": "Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 32,
+    "ayat": 26,
+    "lafaz_arab": "وِفَاقًا",
+    "transliterasi": "wifaaqaa",
+    "hukum": "Mad Arid Lissukun",
+    "kategori": "Mad Far'i",
+    "penjelasan": "Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 33,
+    "ayat": 28,
+    "lafaz_arab": "كِذَّابًا",
+    "transliterasi": "kidz-dzaabaa",
+    "hukum": "Mad Arid Lissukun",
+    "kategori": "Mad Far'i",
+    "penjelasan": "Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 34,
+    "ayat": 29,
+    "lafaz_arab": "كِتَابًا",
+    "transliterasi": "kitaabaa",
+    "hukum": "Mad Arid Lissukun",
+    "kategori": "Mad Far'i",
+    "penjelasan": "Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 35,
+    "ayat": 30,
+    "lafaz_arab": "عَذَابًا",
+    "transliterasi": "'adzaabaa",
+    "hukum": "Mad Arid Lissukun",
+    "kategori": "Mad Far'i",
+    "penjelasan": "Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 36,
+    "ayat": 31,
+    "lafaz_arab": "مَفَازًا",
+    "transliterasi": "mafaazaa",
+    "hukum": "Mad Arid Lissukun",
+    "kategori": "Mad Far'i",
+    "penjelasan": "Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 37,
+    "ayat": 33,
+    "lafaz_arab": "وَكَوَاعِبَ أَتْرَابًا",
+    "transliterasi": "wa kawaa'iba atraabaa",
+    "hukum": "Mad Arid Lissukun",
+    "kategori": "Mad Far'i",
+    "penjelasan": "Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 38,
+    "ayat": 35,
+    "lafaz_arab": "لَغْوًا وَلَا",
+    "transliterasi": "laghwan walaa",
+    "hukum": "Idgham Bighunnah",
+    "kategori": "Nun Mati dan Tanwin",
+    "penjelasan": "Tanwin pada 'laghwan' bertemu huruf wawu, dibaca lebur dengan dengung 2 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 39,
+    "ayat": 37,
+    "lafaz_arab": "الرَّحْمَٰنِ",
+    "transliterasi": "ar-rahmaani",
+    "hukum": "Idgham Syamsiyyah",
+    "kategori": "Alif Lam",
+    "penjelasan": "Alif lam bertemu huruf ra (huruf syamsiyyah), lam dilebur ke dalam ra dan dibaca tasydid.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 40,
+    "ayat": 38,
+    "lafaz_arab": "الرُّوحُ",
+    "transliterasi": "ar-ruuhu",
+    "hukum": "Idgham Syamsiyyah",
+    "kategori": "Alif Lam",
+    "penjelasan": "Alif lam bertemu huruf ra (huruf syamsiyyah), lam dilebur ke dalam ra dan dibaca tasydid.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 41,
+    "ayat": 38,
+    "lafaz_arab": "صَوَابًا",
+    "transliterasi": "shawaabaa",
+    "hukum": "Mad Arid Lissukun",
+    "kategori": "Mad Far'i",
+    "penjelasan": "Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 42,
+    "ayat": 39,
+    "lafaz_arab": "مَآبًا",
+    "transliterasi": "ma-aabaa",
+    "hukum": "Mad Arid Lissukun",
+    "kategori": "Mad Far'i",
+    "penjelasan": "Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 43,
+    "ayat": 40,
+    "lafaz_arab": "قَرِيبًا",
+    "transliterasi": "qariibaa",
+    "hukum": "Mad Arid Lissukun",
+    "kategori": "Mad Far'i",
+    "penjelasan": "Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  },
+  {
+    "id": 44,
+    "ayat": 40,
+    "lafaz_arab": "تُرَابًا",
+    "transliterasi": "turaabaa",
+    "hukum": "Mad Arid Lissukun",
+    "kategori": "Mad Far'i",
+    "penjelasan": "Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat.",
+    "sumber": "Kitab Hidayatus Sibyan"
+  }
+]

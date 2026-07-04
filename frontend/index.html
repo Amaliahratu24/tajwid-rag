@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tanya Jawab Tajwid An-Naba'</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <span class="brand-icon">النَّبَأ</span>
+        <div>
+          <div class="brand-title">TAJWID Q&amp;A</div>
+          <div class="brand-sub">AN-NABA'</div>
+        </div>
+      </div>
+
+      <button id="new-chat-btn" class="new-chat-btn">+ Chat Baru</button>
+
+      <div class="sidebar-section-label">RIWAYAT</div>
+      <div id="history-list" class="history-list"></div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+      <header class="topbar">
+        <h1>Sistem Tanya Jawab Tajwid</h1>
+        <div class="badges">
+          <span class="badge badge-amber">Surat An-Naba' (78)</span>
+          <span class="badge badge-green">Strict Grounding ON</span>
+          <select id="model-select" class="model-select">
+            <option value="groq">Groq (cepat)</option>
+            <option value="gemini">Gemini</option>
+          </select>
+        </div>
+      </header>
+
+      <div id="chat-box" class="chat-box"></div>
+
+      <form id="chat-form">
+        <input type="text" id="user-input" placeholder="Tanyakan hukum tajwid An-Naba'..." autocomplete="off" required>
+        <button type="submit" id="send-btn">➤</button>
+      </form>
+      <p class="footnote">Jawaban hanya berdasarkan dokumen tajwid An-Naba' · Strict Grounding RAG</p>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

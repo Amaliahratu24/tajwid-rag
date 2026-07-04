@@ -1,13 +1,16 @@
 import mysql.connector
 import json
 import os
+from dotenv import load_dotenv
 
-# Konfigurasi koneksi ke MySQL XAMPP
+load_dotenv()
+
+# Konfigurasi koneksi ke MySQL, dibaca dari file .env (beda-beda tiap laptop)
 DB_CONFIG = {
-    "host": "localhost",
-    "user": "root",
-    "password": "",  # default XAMPP kosong
-    "port": 4306
+    "host": os.getenv("DB_HOST"),
+    "user": os.getenv("DB_USER"),
+    "password": os.getenv("DB_PASSWORD"),
+    "port": int(os.getenv("DB_PORT"))
 }
 
 def create_database_and_tables():

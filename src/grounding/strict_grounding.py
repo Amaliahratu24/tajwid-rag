@@ -21,11 +21,8 @@ Kalimat yang murni template ("Informasi tersebut tidak tersedia...",
 "Sumber:", dll) dikecualikan dari pengecekan supaya tidak salah flag.
 """
 import re
-from sentence_transformers import SentenceTransformer
+from src.shared.embedding_model import get_embedding_model
 import numpy as np
-
-_MODEL_NAME = "paraphrase-multilingual-mpnet-base-v2"
-_model = None  # lazy-load, biar tidak load model 2x kalau dipakai bareng retriever
 
 SIMILARITY_THRESHOLD = 0.45   # skor cosine minimum per kalimat supaya dianggap grounded
 GROUNDING_THRESHOLD_RATIO = 0.7  # minimal 70% kalimat harus grounded
@@ -38,10 +35,7 @@ TEMPLATE_PATTERNS = [
 
 
 def _get_model():
-    global _model
-    if _model is None:
-        _model = SentenceTransformer(_MODEL_NAME)
-    return _model
+    return get_embedding_model()  # pakai model BERSAMA, sama dengan yang dipakai retriever.py
 
 
 def _split_sentences(text: str):

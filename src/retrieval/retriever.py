@@ -1,20 +1,39 @@
 import chromadb
 from chromadb.api.types import EmbeddingFunction
-from sentence_transformers import SentenceTransformer
 import mysql.connector
 import os
 import re
 from dotenv import load_dotenv
+from src.shared.embedding_model import get_embedding_model
 
 load_dotenv()
 
+_chroma_client = None
+_chroma_collection = None
+
+
 class LocalEmbeddingFunction(EmbeddingFunction):
-    def __init__(self, model_name):
-        self.model = SentenceTransformer(model_name)
+    def __init__(self):
+        self.model = get_embedding_model()  # pakai model BERSAMA, tidak load sendiri
 
     def __call__(self, input):
         embeddings = self.model.encode(input, convert_to_numpy=True)
         return embeddings.tolist()
+
+
+def _get_chroma_collection():
+    """Reuse embedding function + chroma client + collection antar request,
+    supaya model besar (paraphrase-multilingual-mpnet-base-v2) tidak
+    di-load ulang dari disk setiap ada pertanyaan masuk."""
+    global _chroma_client, _chroma_collection
+    if _chroma_collection is None:
+        embedding_fn = LocalEmbeddingFunction()
+        _chroma_client = chromadb.PersistentClient(path="data/chromadb")
+        _chroma_collection = _chroma_client.get_collection(
+            name="tajwid_annaba",
+            embedding_function=embedding_fn
+        )
+    return _chroma_collection
 
 def get_db_connection():
     return mysql.connector.connect(
@@ -47,12 +66,7 @@ def retrieve_dari_mysql(ayat_number: int):
 
 def retrieve_dari_chroma(query: str, top_k: int = 5):
     """Semantic search dari ChromaDB."""
-    embedding_fn = LocalEmbeddingFunction("paraphrase-multilingual-mpnet-base-v2")
-    client = chromadb.PersistentClient(path="data/chromadb")
-    collection = client.get_collection(
-        name="tajwid_annaba",
-        embedding_function=embedding_fn
-    )
+    collection = _get_chroma_collection()
     results = collection.query(
         query_texts=[query],
         n_results=top_k

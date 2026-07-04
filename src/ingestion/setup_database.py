@@ -5,12 +5,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# Konfigurasi koneksi ke MySQL, dibaca dari file .env (beda-beda tiap laptop)
+# Konfigurasi koneksi ke MySQL, diambil dari .env
 DB_CONFIG = {
-    "host": os.getenv("DB_HOST"),
-    "user": os.getenv("DB_USER"),
-    "password": os.getenv("DB_PASSWORD"),
-    "port": int(os.getenv("DB_PORT"))
+    "host": os.getenv("DB_HOST", "localhost"),
+    "user": os.getenv("DB_USER", "root"),
+    "password": os.getenv("DB_PASSWORD", ""),
+    "port": int(os.getenv("DB_PORT", 3306))
 }
 
 def create_database_and_tables():

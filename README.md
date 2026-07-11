@@ -183,7 +183,8 @@ kanan atas untuk pilih model **Groq** atau **Gemini**.
 
 | Nama Lengkap | NIM | Peran |
 |---|---|---|
-| Syifa Auliyah Kusumawardani | 11230910000114 | Backend, API & Database |
 | Ratu Amaliah | 11230910000026 | Dataset & RAG Core |
 | Fitria Sintia Wati | 11230910000036 | Frontend |
 | Fadiya Tsabita | 11230910000062 | Evaluasi & Hukum Tajwid |
+| Syifa Auliyah Kusumawardani | 11230910000114 | Backend, API & Database |
+

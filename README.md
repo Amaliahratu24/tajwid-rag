@@ -5,20 +5,26 @@ hukum tajwid dalam Surah An-Naba', dengan **strict grounding check** —
 jawaban LLM diverifikasi otomatis supaya tidak mengarang di luar data yang ada.
 
 Sistem ini mendukung **dua pilihan LLM**: Groq (llama-3.3-70b-versatile) dan
-Gemini (gemini-2.0-flash), yang bisa dipilih langsung lewat parameter di API.
+Gemini (gemini-2.0-flash), yang bisa dipilih langsung lewat parameter di API
+atau dropdown di frontend.
 
 ## 📁 Struktur Proyek
 
 ```
 tajwid-rag/
 ├── main.py                      # jalankan sistem lewat CLI (terminal)
-├── requirements.txt             # daftar library Python
-├── .env                         # konfigurasi 
+├── requirements.txt              # daftar library Python
+├── .env                          # konfigurasi
 │
 ├── data/
 │   ├── annaba_raw.json           # 40 ayat An-Naba' (arab, latin, arti)
 │   ├── tajwid_annaba.json        # data hukum tajwid tiap ayat
 │   └── chromadb/                 # vector database (dibuat otomatis)
+│
+├── frontend/                     # tampilan website
+│   ├── index.html
+│   ├── script.js                 # panggil API ke http://localhost:8000
+│   └── style.css
 │
 └── src/
     ├── ingestion/                # menyiapkan data
@@ -32,14 +38,18 @@ tajwid-rag/
     │
     ├── generation/
     │   ├── generator.py           # kirim ke LLM Groq, hasilkan jawaban
-    │   └── llm_gemini.py          # kirim ke LLM Gemini, hasilkan jawaban (opsi kedua)
+    │   └── llm_gemini.py          # kirim ke LLM Gemini, hasilkan jawaban 
     │
     ├── grounding/
     │   └── strict_grounding.py    # verifikasi jawaban benar2 didukung konteks
     │
+    ├── shared/
+    │   └── embedding_model.py     # satu instance model embedding dipakai bareng
+    │                               #   oleh retriever.py & strict_grounding.py
+    │
     ├── database/
-    │   └── setup_app_tables.py    # bikin 6 tabel: users, sessions, questions, retrieved_docs, answers, feedback
-    │                               
+    │   └── setup_app_tables.py    # bikin 6 tabel: users, sessions, questions,
+    │                               #   retrieved_docs, answers, feedback
     │
     └── api/
         └── main_api.py            # FastAPI, endpoint untuk frontend
@@ -71,13 +81,13 @@ Atau pakai **GitHub Desktop**: File → Clone Repository → paste URL repo ini.
 pip install -r requirements.txt
 ```
 
-Proses ini agak lama (beberapa menit) karena ada library besar seperti `torch`
+Proses ini agak lama karena ada library besar seperti `torch`
 dan `sentence-transformers`. Tunggu sampai selesai tanpa error.
 
 ### 3. Buat file `.env`
 
-Buat file `.env` di folder utama repo, lalu isi
-dengan konfigurasi **laptop kamu sendiri**:
+Buat file `.env` di folder utama repo, lalu isi dengan konfigurasi
+**laptop kamu sendiri**:
 
 ```
 DB_HOST=localhost
@@ -89,30 +99,12 @@ GROQ_API_KEY=isi_dengan_api_key_groq_kamu
 GEMINI_API_KEY=isi_dengan_api_key_gemini_kamu
 ```
 
-> ⚠️ **PENTING SOAL PORT MYSQL — WAJIB DIBACA**
->
-> Port MySQL XAMPP **berbeda-beda di tiap laptop**. Defaultnya `3306`,
-> tapi kalau di laptopmu sudah ada software lain yang bentrok di port itu,
-> XAMPP bisa otomatis pindah ke port lain (contoh: penulis README ini
-> pakai port **4306**).
->
-> **Cara cek port MySQL kamu:**
-> 1. Buka **XAMPP Control Panel**
-> 2. Klik tombol **Config** di baris MySQL → pilih `my.ini`
-> 3. Cari baris `port = ....` di bagian `[mysqld]`
-> 4. Sesuaikan angka itu ke `DB_PORT` di file `.env` kamu
->
-> Kalau tidak disesuaikan, kamu akan dapat error
-> `Can't connect to MySQL server` atau `Access denied for user 'root'`.
-> Jangan asumsikan port `3306` otomatis benar — **selalu cek dulu**.
-
 Dapatkan `GROQ_API_KEY` gratis di [console.groq.com](https://console.groq.com)
 → menu **API Keys** → **Create API Key**.
 
 Dapatkan `GEMINI_API_KEY` gratis di [aistudio.google.com/api-keys](https://aistudio.google.com/api-keys)
 → klik ikon kunci 🔑 di pojok kiri bawah → **Create API key** → pilih
-**Create API key in new project**. Tidak perlu isi data billing/kartu untuk
-pemakaian skala kecil (free tier).
+**Create API key in new project**.
 
 ### 4. Nyalakan XAMPP
 
@@ -158,7 +150,7 @@ Ketik pertanyaan **lengkap** (bukan cuma angka nomor), contoh:
 Sebutkan contoh Mad Thabi'i dalam surah An-Naba
 ```
 
-### 8. Jalankan API (untuk dipakai frontend)
+### 8. Jalankan API (backend)
 
 ```bash
 uvicorn src.api.main_api:app --reload
@@ -168,51 +160,30 @@ Biarkan terminal ini tetap terbuka selama server berjalan. Buka
 `http://localhost:8000/docs` di browser untuk melihat dan mencoba semua
 endpoint yang tersedia secara interaktif.
 
-## 📡 Ringkasan Endpoint API
+### 9. Buka Frontend (website)
 
-| Method | Endpoint | Kegunaan |
-|---|---|---|
-| GET | `/` | Cek API hidup atau tidak |
-| POST | `/sessions` | Bikin sesi chat baru |
-| POST | `/ask` | Kirim pertanyaan, dapat jawaban + grounding check |
-| POST | `/feedback` | Kirim rating bintang untuk suatu jawaban |
+Pastikan API di Langkah 8 masih berjalan (terminal jangan ditutup), lalu:
 
-### Memilih model LLM (Groq atau Gemini)
+1. Buka folder `frontend/` di File Explorer
+2. Klik dua kali file `index.html` — akan terbuka otomatis di browser
 
-Endpoint `POST /ask` menerima parameter opsional `"model"` untuk memilih
-LLM yang dipakai:
-- `"model": "groq"` → pakai Groq (llama-3.3-70b-versatile) — **default**
-  kalau parameter ini tidak diisi/dikosongkan
-- `"model": "gemini"` → pakai Gemini (gemini-2.0-flash)
-
-Contoh body request `POST /ask`:
-```json
-{
-  "pertanyaan": "Apa hukum tajwid lafaz Ar-Rahman dalam surah An-Naba?",
-  "session_id": null,
-  "model": "gemini"
-}
+Atau, kalau `index.html` tidak mau langsung connect ke API (karena
+kadang browser membatasi file lokal), jalankan lewat server sederhana:
+```bash
+cd frontend
+python -m http.server 5500
 ```
+lalu buka `http://localhost:5500` di browser.
 
-Contoh response:
-```json
-{
-  "question_id": 1,
-  "answer_id": 1,
-  "session_id": 1,
-  "model_digunakan": "gemini-2.0-flash",
-  "jawaban": "...",
-  "sumber": ["Kitab Hidayatus Sibyan"],
-  "is_grounded": true,
-  "grounding_score": 0.706
-}
-```
+Website akan otomatis terhubung ke API di `http://localhost:8000` (sudah
+diatur di `frontend/script.js`, baris `API_URL`). Ada dropdown di pojok
+kanan atas untuk pilih model **Groq** atau **Gemini**.
 
 ## 👥 Kontributor
- 
+
 | Nama Lengkap | NIM | Peran |
 |---|---|---|
+| Syifa Auliyah Kusumawardani | 11230910000114 | Backend, API & Database |
 | Ratu Amaliah | 11230910000026 | Dataset & RAG Core |
 | Fitria Sintia Wati | 11230910000036 | Frontend |
 | Fadiya Tsabita | 11230910000062 | Evaluasi & Hukum Tajwid |
-| Syifa Auliyah Kusumawardani | 11230910000114 | Backend, API & Database |

@@ -1,0 +1,402 @@
+[
+  {
+    "id": 1,
+    "pertanyaan": "Apa hukum tajwid pada lafaz عَمَّ di ayat 1 surah An-Naba?",
+    "jawaban_benar": "Lafaz عَمَّ ('amma) pada ayat 1 surah An-Naba' termasuk hukum Idgham Bighunnah, kategori Nun Mati dan Tanwin. Berasal dari 'an + ma'. Nun mati bertemu huruf mim, dibaca lebur dengan dengung (ghunnah) selama 2 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Idgham Bighunnah",
+    "ayat_rujukan": 1
+  },
+  {
+    "id": 2,
+    "pertanyaan": "Jelaskan hukum bacaan lafaz يَتَسَاءَلُونَ pada ayat 1 An-Naba!",
+    "jawaban_benar": "Lafaz يَتَسَاءَلُونَ (yatasaa'aluun) pada ayat 1 surah An-Naba' termasuk hukum Mad Arid Lissukun, kategori Mad Far'i. Huruf wawu mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Mad Arid Lissukun",
+    "ayat_rujukan": 1
+  },
+  {
+    "id": 3,
+    "pertanyaan": "Bagaimana cara membaca lafaz النَّبَإِ pada ayat ke-2?",
+    "jawaban_benar": "Lafaz النَّبَإِ (an-naba-i) pada ayat 2 surah An-Naba' termasuk hukum Idgham Syamsiyyah, kategori Alif Lam. Alif lam bertemu huruf nun (huruf syamsiyyah), lam dibaca lebur/idgham ke dalam nun dan dibaca dengan tasydid. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Idgham Syamsiyyah",
+    "ayat_rujukan": 2
+  },
+  {
+    "id": 4,
+    "pertanyaan": "Sebutkan dan jelaskan hukum tajwid dari kata الْعَظِيمِ di ayat 2!",
+    "jawaban_benar": "Lafaz الْعَظِيمِ (al-'azhiim) pada ayat 2 surah An-Naba' termasuk hukum Izhar Qamariyyah, kategori Alif Lam. Alif lam bertemu huruf ain (huruf qamariyyah), lam dibaca jelas/izhar tanpa dilebur. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Izhar Qamariyyah",
+    "ayat_rujukan": 2
+  },
+  {
+    "id": 5,
+    "pertanyaan": "Mengapa lafaz الَّذِي pada ayat 3 dibaca demikian? Jelaskan hukumnya!",
+    "jawaban_benar": "Lafaz الَّذِي (alladzii) pada ayat 3 surah An-Naba' termasuk hukum Idgham Syamsiyyah, kategori Alif Lam. Alif lam bertemu huruf lam (huruf syamsiyyah), lam pertama dilebur ke lam berikutnya dan dibaca tasydid. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Idgham Syamsiyyah",
+    "ayat_rujukan": 3
+  },
+  {
+    "id": 6,
+    "pertanyaan": "Apa hukum tajwid pada lafaz هُمْ فِيهِ di ayat 3 surah An-Naba?",
+    "jawaban_benar": "Lafaz هُمْ فِيهِ (hum fiih) pada ayat 3 surah An-Naba' termasuk hukum Idgham Bighunnah, kategori Nun Mati dan Tanwin. Mim mati bertemu huruf fa — ini sebenarnya izhar syafawi karena mim mati bertemu selain ba/mim, dibaca jelas. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Idgham Bighunnah",
+    "ayat_rujukan": 3
+  },
+  {
+    "id": 7,
+    "pertanyaan": "Jelaskan hukum bacaan lafaz كَلَّا pada ayat 4 An-Naba!",
+    "jawaban_benar": "Lafaz كَلَّا (kallaa) pada ayat 4 surah An-Naba' termasuk hukum Mad Thabi'i, kategori Mad Asli. Huruf lam bertemu alif mad, dibaca panjang 2 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Mad Thabi'i",
+    "ayat_rujukan": 4
+  },
+  {
+    "id": 8,
+    "pertanyaan": "Bagaimana cara membaca lafaz كَلَّا سَيَعْلَمُونَ pada ayat ke-5?",
+    "jawaban_benar": "Lafaz كَلَّا سَيَعْلَمُونَ (kallaa saya'lamuun) pada ayat 5 surah An-Naba' termasuk hukum Mad Arid Lissukun, kategori Mad Far'i. Wawu mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Mad Arid Lissukun",
+    "ayat_rujukan": 5
+  },
+  {
+    "id": 9,
+    "pertanyaan": "Sebutkan dan jelaskan hukum tajwid dari kata الْأَرْضَ di ayat 6!",
+    "jawaban_benar": "Lafaz الْأَرْضَ (al-ardha) pada ayat 6 surah An-Naba' termasuk hukum Izhar Qamariyyah, kategori Alif Lam. Alif lam bertemu hamzah (huruf qamariyyah), lam dibaca jelas. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Izhar Qamariyyah",
+    "ayat_rujukan": 6
+  },
+  {
+    "id": 10,
+    "pertanyaan": "Mengapa lafaz مِهَادًا pada ayat 6 dibaca demikian? Jelaskan hukumnya!",
+    "jawaban_benar": "Lafaz مِهَادًا (mihaadaa) pada ayat 6 surah An-Naba' termasuk hukum Mad Arid Lissukun, kategori Mad Far'i. Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Mad Arid Lissukun",
+    "ayat_rujukan": 6
+  },
+  {
+    "id": 11,
+    "pertanyaan": "Apa hukum tajwid pada lafaz الْجِبَالَ di ayat 7 surah An-Naba?",
+    "jawaban_benar": "Lafaz الْجِبَالَ (al-jibaala) pada ayat 7 surah An-Naba' termasuk hukum Izhar Qamariyyah, kategori Alif Lam. Alif lam bertemu jim (huruf qamariyyah), lam dibaca jelas. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Izhar Qamariyyah",
+    "ayat_rujukan": 7
+  },
+  {
+    "id": 12,
+    "pertanyaan": "Jelaskan hukum bacaan lafaz أَوْتَادًا pada ayat 7 An-Naba!",
+    "jawaban_benar": "Lafaz أَوْتَادًا (awtaadaa) pada ayat 7 surah An-Naba' termasuk hukum Mad Arid Lissukun, kategori Mad Far'i. Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Mad Arid Lissukun",
+    "ayat_rujukan": 7
+  },
+  {
+    "id": 13,
+    "pertanyaan": "Bagaimana cara membaca lafaz أَزْوَاجًا pada ayat ke-8?",
+    "jawaban_benar": "Lafaz أَزْوَاجًا (azwaajaa) pada ayat 8 surah An-Naba' termasuk hukum Mad Arid Lissukun, kategori Mad Far'i. Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Mad Arid Lissukun",
+    "ayat_rujukan": 8
+  },
+  {
+    "id": 14,
+    "pertanyaan": "Sebutkan dan jelaskan hukum tajwid dari kata سُبَاتًا di ayat 9!",
+    "jawaban_benar": "Lafaz سُبَاتًا (subaataa) pada ayat 9 surah An-Naba' termasuk hukum Mad Arid Lissukun, kategori Mad Far'i. Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Mad Arid Lissukun",
+    "ayat_rujukan": 9
+  },
+  {
+    "id": 15,
+    "pertanyaan": "Mengapa lafaz لِبَاسًا pada ayat 10 dibaca demikian? Jelaskan hukumnya!",
+    "jawaban_benar": "Lafaz لِبَاسًا (libaasaa) pada ayat 10 surah An-Naba' termasuk hukum Mad Arid Lissukun, kategori Mad Far'i. Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Mad Arid Lissukun",
+    "ayat_rujukan": 10
+  },
+  {
+    "id": 16,
+    "pertanyaan": "Apa hukum tajwid pada lafaz مَعَاشًا di ayat 11 surah An-Naba?",
+    "jawaban_benar": "Lafaz مَعَاشًا (ma'aasyaa) pada ayat 11 surah An-Naba' termasuk hukum Mad Arid Lissukun, kategori Mad Far'i. Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Mad Arid Lissukun",
+    "ayat_rujukan": 11
+  },
+  {
+    "id": 17,
+    "pertanyaan": "Jelaskan hukum bacaan lafaz شِدَادًا pada ayat 12 An-Naba!",
+    "jawaban_benar": "Lafaz شِدَادًا (syi daadaa) pada ayat 12 surah An-Naba' termasuk hukum Mad Arid Lissukun, kategori Mad Far'i. Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Mad Arid Lissukun",
+    "ayat_rujukan": 12
+  },
+  {
+    "id": 18,
+    "pertanyaan": "Bagaimana cara membaca lafaz وَهَّاجًا pada ayat ke-13?",
+    "jawaban_benar": "Lafaz وَهَّاجًا (wahhaajaa) pada ayat 13 surah An-Naba' termasuk hukum Mad Arid Lissukun, kategori Mad Far'i. Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Mad Arid Lissukun",
+    "ayat_rujukan": 13
+  },
+  {
+    "id": 19,
+    "pertanyaan": "Sebutkan dan jelaskan hukum tajwid dari kata ثَجَّاجًا di ayat 14!",
+    "jawaban_benar": "Lafaz ثَجَّاجًا (tsajjaajaa) pada ayat 14 surah An-Naba' termasuk hukum Mad Arid Lissukun, kategori Mad Far'i. Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Mad Arid Lissukun",
+    "ayat_rujukan": 14
+  },
+  {
+    "id": 20,
+    "pertanyaan": "Mengapa lafaz حَبًّا pada ayat 15 dibaca demikian? Jelaskan hukumnya!",
+    "jawaban_benar": "Lafaz حَبًّا (habbaa) pada ayat 15 surah An-Naba' termasuk hukum Mad Arid Lissukun, kategori Mad Far'i. Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Mad Arid Lissukun",
+    "ayat_rujukan": 15
+  },
+  {
+    "id": 21,
+    "pertanyaan": "Apa hukum tajwid pada lafaz وَنَبَاتًا di ayat 15 surah An-Naba?",
+    "jawaban_benar": "Lafaz وَنَبَاتًا (wa nabaataa) pada ayat 15 surah An-Naba' termasuk hukum Mad Arid Lissukun, kategori Mad Far'i. Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Mad Arid Lissukun",
+    "ayat_rujukan": 15
+  },
+  {
+    "id": 22,
+    "pertanyaan": "Jelaskan hukum bacaan lafaz الْفَصْلِ pada ayat 17 An-Naba!",
+    "jawaban_benar": "Lafaz الْفَصْلِ (al-fashl) pada ayat 17 surah An-Naba' termasuk hukum Izhar Qamariyyah, kategori Alif Lam. Alif lam bertemu fa (huruf qamariyyah), lam dibaca jelas. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Izhar Qamariyyah",
+    "ayat_rujukan": 17
+  },
+  {
+    "id": 23,
+    "pertanyaan": "Bagaimana cara membaca lafaz مِيقَاتًا pada ayat ke-17?",
+    "jawaban_benar": "Lafaz مِيقَاتًا (miiqaataa) pada ayat 17 surah An-Naba' termasuk hukum Mad Arid Lissukun, kategori Mad Far'i. Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Mad Arid Lissukun",
+    "ayat_rujukan": 17
+  },
+  {
+    "id": 24,
+    "pertanyaan": "Sebutkan dan jelaskan hukum tajwid dari kata فَتَأْتُونَ di ayat 18!",
+    "jawaban_benar": "Lafaz فَتَأْتُونَ (fata'tuun) pada ayat 18 surah An-Naba' termasuk hukum Mad Arid Lissukun, kategori Mad Far'i. Wawu mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Mad Arid Lissukun",
+    "ayat_rujukan": 18
+  },
+  {
+    "id": 25,
+    "pertanyaan": "Mengapa lafaz سَرَابًا pada ayat 20 dibaca demikian? Jelaskan hukumnya!",
+    "jawaban_benar": "Lafaz سَرَابًا (saraabaa) pada ayat 20 surah An-Naba' termasuk hukum Mad Arid Lissukun, kategori Mad Far'i. Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Mad Arid Lissukun",
+    "ayat_rujukan": 20
+  },
+  {
+    "id": 26,
+    "pertanyaan": "Apa hukum tajwid pada lafaz جَهَنَّمَ di ayat 21 surah An-Naba?",
+    "jawaban_benar": "Lafaz جَهَنَّمَ (jahannama) pada ayat 21 surah An-Naba' termasuk hukum Ghunnah, kategori Ghunnah. Huruf nun bertasydid dibaca dengung selama 2 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Ghunnah",
+    "ayat_rujukan": 21
+  },
+  {
+    "id": 27,
+    "pertanyaan": "Jelaskan hukum bacaan lafaz مِرْصَادًا pada ayat 21 An-Naba!",
+    "jawaban_benar": "Lafaz مِرْصَادًا (mirshaadaa) pada ayat 21 surah An-Naba' termasuk hukum Mad Arid Lissukun, kategori Mad Far'i. Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Mad Arid Lissukun",
+    "ayat_rujukan": 21
+  },
+  {
+    "id": 28,
+    "pertanyaan": "Bagaimana cara membaca lafaz لَابِثِينَ pada ayat ke-23?",
+    "jawaban_benar": "Lafaz لَابِثِينَ (laabitsiin) pada ayat 23 surah An-Naba' termasuk hukum Mad Thabi'i, kategori Mad Asli. Alif setelah lam dan ya setelah tsa, masing-masing dibaca panjang 2 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Mad Thabi'i",
+    "ayat_rujukan": 23
+  },
+  {
+    "id": 29,
+    "pertanyaan": "Sebutkan dan jelaskan hukum tajwid dari kata أَحْقَابًا di ayat 23!",
+    "jawaban_benar": "Lafaz أَحْقَابًا (ahqaabaa) pada ayat 23 surah An-Naba' termasuk hukum Mad Arid Lissukun, kategori Mad Far'i. Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Mad Arid Lissukun",
+    "ayat_rujukan": 23
+  },
+  {
+    "id": 30,
+    "pertanyaan": "Mengapa lafaz بَارِدًا وَلَا pada ayat 24 dibaca demikian? Jelaskan hukumnya!",
+    "jawaban_benar": "Lafaz بَارِدًا وَلَا (baaridan walaa) pada ayat 24 surah An-Naba' termasuk hukum Idgham Bighunnah, kategori Nun Mati dan Tanwin. Tanwin (nun mati) pada 'baaridan' bertemu huruf wawu, dibaca lebur dengan dengung 2 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Idgham Bighunnah",
+    "ayat_rujukan": 24
+  },
+  {
+    "id": 31,
+    "pertanyaan": "Apa hukum tajwid pada lafaz غَسَّاقًا di ayat 25 surah An-Naba?",
+    "jawaban_benar": "Lafaz غَسَّاقًا (ghassaaqaa) pada ayat 25 surah An-Naba' termasuk hukum Mad Arid Lissukun, kategori Mad Far'i. Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Mad Arid Lissukun",
+    "ayat_rujukan": 25
+  },
+  {
+    "id": 32,
+    "pertanyaan": "Jelaskan hukum bacaan lafaz وِفَاقًا pada ayat 26 An-Naba!",
+    "jawaban_benar": "Lafaz وِفَاقًا (wifaaqaa) pada ayat 26 surah An-Naba' termasuk hukum Mad Arid Lissukun, kategori Mad Far'i. Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Mad Arid Lissukun",
+    "ayat_rujukan": 26
+  },
+  {
+    "id": 33,
+    "pertanyaan": "Bagaimana cara membaca lafaz كِذَّابًا pada ayat ke-28?",
+    "jawaban_benar": "Lafaz كِذَّابًا (kidz-dzaabaa) pada ayat 28 surah An-Naba' termasuk hukum Mad Arid Lissukun, kategori Mad Far'i. Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Mad Arid Lissukun",
+    "ayat_rujukan": 28
+  },
+  {
+    "id": 34,
+    "pertanyaan": "Sebutkan dan jelaskan hukum tajwid dari kata كِتَابًا di ayat 29!",
+    "jawaban_benar": "Lafaz كِتَابًا (kitaabaa) pada ayat 29 surah An-Naba' termasuk hukum Mad Arid Lissukun, kategori Mad Far'i. Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Mad Arid Lissukun",
+    "ayat_rujukan": 29
+  },
+  {
+    "id": 35,
+    "pertanyaan": "Mengapa lafaz عَذَابًا pada ayat 30 dibaca demikian? Jelaskan hukumnya!",
+    "jawaban_benar": "Lafaz عَذَابًا ('adzaabaa) pada ayat 30 surah An-Naba' termasuk hukum Mad Arid Lissukun, kategori Mad Far'i. Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Mad Arid Lissukun",
+    "ayat_rujukan": 30
+  },
+  {
+    "id": 36,
+    "pertanyaan": "Apa hukum tajwid pada lafaz مَفَازًا di ayat 31 surah An-Naba?",
+    "jawaban_benar": "Lafaz مَفَازًا (mafaazaa) pada ayat 31 surah An-Naba' termasuk hukum Mad Arid Lissukun, kategori Mad Far'i. Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Mad Arid Lissukun",
+    "ayat_rujukan": 31
+  },
+  {
+    "id": 37,
+    "pertanyaan": "Jelaskan hukum bacaan lafaz وَكَوَاعِبَ أَتْرَابًا pada ayat 33 An-Naba!",
+    "jawaban_benar": "Lafaz وَكَوَاعِبَ أَتْرَابًا (wa kawaa'iba atraabaa) pada ayat 33 surah An-Naba' termasuk hukum Mad Arid Lissukun, kategori Mad Far'i. Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Mad Arid Lissukun",
+    "ayat_rujukan": 33
+  },
+  {
+    "id": 38,
+    "pertanyaan": "Bagaimana cara membaca lafaz لَغْوًا وَلَا pada ayat ke-35?",
+    "jawaban_benar": "Lafaz لَغْوًا وَلَا (laghwan walaa) pada ayat 35 surah An-Naba' termasuk hukum Idgham Bighunnah, kategori Nun Mati dan Tanwin. Tanwin pada 'laghwan' bertemu huruf wawu, dibaca lebur dengan dengung 2 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Idgham Bighunnah",
+    "ayat_rujukan": 35
+  },
+  {
+    "id": 39,
+    "pertanyaan": "Sebutkan dan jelaskan hukum tajwid dari kata الرَّحْمَٰنِ di ayat 37!",
+    "jawaban_benar": "Lafaz الرَّحْمَٰنِ (ar-rahmaani) pada ayat 37 surah An-Naba' termasuk hukum Idgham Syamsiyyah, kategori Alif Lam. Alif lam bertemu huruf ra (huruf syamsiyyah), lam dilebur ke dalam ra dan dibaca tasydid. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Idgham Syamsiyyah",
+    "ayat_rujukan": 37
+  },
+  {
+    "id": 40,
+    "pertanyaan": "Mengapa lafaz الرُّوحُ pada ayat 38 dibaca demikian? Jelaskan hukumnya!",
+    "jawaban_benar": "Lafaz الرُّوحُ (ar-ruuhu) pada ayat 38 surah An-Naba' termasuk hukum Idgham Syamsiyyah, kategori Alif Lam. Alif lam bertemu huruf ra (huruf syamsiyyah), lam dilebur ke dalam ra dan dibaca tasydid. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Idgham Syamsiyyah",
+    "ayat_rujukan": 38
+  },
+  {
+    "id": 41,
+    "pertanyaan": "Apa hukum tajwid pada lafaz صَوَابًا di ayat 38 surah An-Naba?",
+    "jawaban_benar": "Lafaz صَوَابًا (shawaabaa) pada ayat 38 surah An-Naba' termasuk hukum Mad Arid Lissukun, kategori Mad Far'i. Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Mad Arid Lissukun",
+    "ayat_rujukan": 38
+  },
+  {
+    "id": 42,
+    "pertanyaan": "Jelaskan hukum bacaan lafaz مَآبًا pada ayat 39 An-Naba!",
+    "jawaban_benar": "Lafaz مَآبًا (ma-aabaa) pada ayat 39 surah An-Naba' termasuk hukum Mad Arid Lissukun, kategori Mad Far'i. Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Mad Arid Lissukun",
+    "ayat_rujukan": 39
+  },
+  {
+    "id": 43,
+    "pertanyaan": "Bagaimana cara membaca lafaz قَرِيبًا pada ayat ke-40?",
+    "jawaban_benar": "Lafaz قَرِيبًا (qariibaa) pada ayat 40 surah An-Naba' termasuk hukum Mad Arid Lissukun, kategori Mad Far'i. Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Mad Arid Lissukun",
+    "ayat_rujukan": 40
+  },
+  {
+    "id": 44,
+    "pertanyaan": "Sebutkan dan jelaskan hukum tajwid dari kata تُرَابًا di ayat 40!",
+    "jawaban_benar": "Lafaz تُرَابًا (turaabaa) pada ayat 40 surah An-Naba' termasuk hukum Mad Arid Lissukun, kategori Mad Far'i. Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "tipe": "in_domain",
+    "hukum_seharusnya": "Mad Arid Lissukun",
+    "ayat_rujukan": 40
+  },
+  {
+    "id": 45,
+    "pertanyaan": "Apa hukum tajwid Iqlab dalam surah An-Naba?",
+    "jawaban_benar": "Informasi tersebut tidak tersedia dalam database tajwid An-Naba.",
+    "tipe": "out_of_domain",
+    "hukum_seharusnya": null,
+    "ayat_rujukan": null
+  },
+  {
+    "id": 46,
+    "pertanyaan": "Jelaskan hukum bacaan Ikhfa Haqiqi pada surah An-Naba!",
+    "jawaban_benar": "Informasi tersebut tidak tersedia dalam database tajwid An-Naba.",
+    "tipe": "out_of_domain",
+    "hukum_seharusnya": null,
+    "ayat_rujukan": null
+  },
+  {
+    "id": 47,
+    "pertanyaan": "Sebutkan contoh Qalqalah Kubra dalam surah An-Naba!",
+    "jawaban_benar": "Informasi tersebut tidak tersedia dalam database tajwid An-Naba.",
+    "tipe": "out_of_domain",
+    "hukum_seharusnya": null,
+    "ayat_rujukan": null
+  },
+  {
+    "id": 48,
+    "pertanyaan": "Apa hukum Mad Wajib Muttasil dalam surah An-Naba?",
+    "jawaban_benar": "Informasi tersebut tidak tersedia dalam database tajwid An-Naba.",
+    "tipe": "out_of_domain",
+    "hukum_seharusnya": null,
+    "ayat_rujukan": null
+  },
+  {
+    "id": 49,
+    "pertanyaan": "Jelaskan hukum Mad Jaiz Munfasil pada surah An-Naba!",
+    "jawaban_benar": "Informasi tersebut tidak tersedia dalam database tajwid An-Naba.",
+    "tipe": "out_of_domain",
+    "hukum_seharusnya": null,
+    "ayat_rujukan": null
+  },
+  {
+    "id": 50,
+    "pertanyaan": "Apa hukum tajwid Izhar Halqi dalam surah An-Naba?",
+    "jawaban_benar": "Informasi tersebut tidak tersedia dalam database tajwid An-Naba.",
+    "tipe": "out_of_domain",
+    "hukum_seharusnya": null,
+    "ayat_rujukan": null
+  }
+]

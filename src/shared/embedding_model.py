@@ -12,13 +12,21 @@ Solusinya: satu model, satu instance, dipakai bareng-bareng oleh
 retriever.py dan strict_grounding.py lewat fungsi get_embedding_model().
 """
 from sentence_transformers import SentenceTransformer
+import threading
+
 
 _MODEL_NAME = "paraphrase-multilingual-mpnet-base-v2"
 _model = None  # lazy-load, cuma di-load sekali untuk SELURUH aplikasi
+_lock = threading.Lock()
 
 
 def get_embedding_model() -> SentenceTransformer:
     global _model
     if _model is None:
-        _model = SentenceTransformer(_MODEL_NAME)
+        with _lock:
+            # cek lagi di dalam lock (double-checked locking) — kalau
+            # ternyata thread lain sudah selesai load duluan sambil kita
+            # nunggu antrian lock, tidak perlu load ulang
+            if _model is None:
+                _model = SentenceTransformer(_MODEL_NAME)
     return _model

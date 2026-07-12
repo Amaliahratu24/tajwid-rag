@@ -5,7 +5,7 @@ hukum tajwid dalam Surah An-Naba', dengan **strict grounding check** —
 jawaban LLM diverifikasi otomatis supaya tidak mengarang di luar data yang ada.
 
 Sistem ini mendukung **dua pilihan LLM**: Groq (llama-3.3-70b-versatile) dan
-Gemini (gemini-2.0-flash), yang bisa dipilih langsung lewat parameter di API
+Gemini (gemini-3-flash-preview), yang bisa dipilih langsung lewat parameter di API
 atau dropdown di frontend.
 
 ## 📁 Struktur Proyek
@@ -13,6 +13,9 @@ atau dropdown di frontend.
 ```
 tajwid-rag/
 ├── main.py                      # jalankan sistem lewat CLI (terminal)
+├── eval.py                      # skrip evaluasi otomatis (ROUGE-L, BERTScore, Faithfulness)
+├── qna_dataset_50.json          # dataset 50 soal Q&A untuk evaluasi
+├── hasil_evaluasi.csv           # hasil evaluasi (dibuat otomatis oleh eval.py)
 ├── requirements.txt              # daftar library Python
 ├── .env                          # konfigurasi
 │
@@ -44,12 +47,10 @@ tajwid-rag/
     │   └── strict_grounding.py    # verifikasi jawaban benar2 didukung konteks
     │
     ├── shared/
-    │   └── embedding_model.py     # satu instance model embedding dipakai bareng
-    │                               #   oleh retriever.py & strict_grounding.py
+    │   └── embedding_model.py     # satu instance model embedding dipakai bareng oleh retriever.py & strict_grounding.py
     │
     ├── database/
-    │   └── setup_app_tables.py    # bikin 6 tabel: users, sessions, questions,
-    │                               #   retrieved_docs, answers, feedback
+    │   └── setup_app_tables.py    # bikin 6 tabel: users, sessions, questions, retrieved_docs, answers, feedback
     │
     └── api/
         └── main_api.py            # FastAPI, endpoint untuk frontend
@@ -72,8 +73,6 @@ Sebelum mulai, pastikan sudah terinstall:
 git clone https://github.com/Amaliahratu24/tajwid-rag.git
 cd tajwid-rag
 ```
-
-Atau pakai **GitHub Desktop**: File → Clone Repository → paste URL repo ini.
 
 ### 2. Install semua library Python
 
@@ -179,6 +178,50 @@ Website akan otomatis terhubung ke API di `http://localhost:8000` (sudah
 diatur di `frontend/script.js`, baris `API_URL`). Ada dropdown di pojok
 kanan atas untuk pilih model **Groq** atau **Gemini**.
 
+## 📊 Evaluasi
+
+Sistem diuji memakai dataset **50 pertanyaan** (`qna_dataset_50.json`) — 44
+pertanyaan **in-domain** (jawabannya ada di database tajwid An-Naba') dan 6
+pertanyaan **out-of-domain** (sengaja di luar cakupan, untuk menguji apakah
+sistem menolak mengarang jawaban).
+
+### Cara menjalankan evaluasi
+
+```bash
+pip install rouge-score bert-score requests
+python eval.py
+```
+
+Skrip ini **resumable** — kalau berhenti di tengah jalan (misalnya kena limit
+API), tinggal jalankan lagi `python eval.py` dan otomatis melanjutkan dari
+yang belum selesai, tanpa mengulang yang sudah berhasil. Hasilnya tersimpan
+di `hasil_evaluasi.csv` (100 baris = 50 pertanyaan × 2 model).
+
+### Metrik yang digunakan
+
+| Metrik | Mengukur |
+|---|---|
+| **ROUGE-L** | Kemiripan susunan kata jawaban sistem vs jawaban rujukan |
+| **BERTScore F1** | Kemiripan makna (semantik) jawaban sistem vs jawaban rujukan |
+| **Faithfulness (grounding score)** | Seberapa besar jawaban benar-benar didukung oleh konteks yang diambil sistem, bukan karangan LLM |
+
+### Hasil (50 pertanyaan × 2 model = 100 data)
+
+| Model | ROUGE-L | BERTScore F1 | Faithfulness | Grounded (dari 50) |
+|---|---|---|---|---|
+| **Groq** (llama-3.3-70b-versatile) | 0.7350 | 0.8744 | 0.7879 | 46/50 |
+| **Gemini** (gemini-3-flash-preview) | 0.7816 | 0.8384 | 0.7378 | 50/50 |
+
+**Catatan singkat:**
+- **Gemini** unggul di ROUGE-L (susunan kata lebih dekat ke jawaban rujukan)
+  dan konsisten lolos grounding check di semua 50 pertanyaan.
+- **Groq** unggul di BERTScore F1 (makna jawaban) dan Faithfulness, tapi 4
+  dari 50 jawabannya gagal lolos strict grounding check.
+- **Keterbatasan Gemini free tier:** model `gemini-3-flash-preview` di Google
+  AI Studio dibatasi **20 request per hari** (`GenerateRequestsPerDayPerProjectPerModel-FreeTier`),
+  jauh lebih ketat dibanding Groq. Ini perlu diperhitungkan kalau sistem
+  dipakai untuk trafik lebih besar dari skala tugas kuliah.
+
 ## 👥 Kontributor
 
 | Nama Lengkap | NIM | Peran |
@@ -187,4 +230,3 @@ kanan atas untuk pilih model **Groq** atau **Gemini**.
 | Fitria Sintia Wati | 11230910000036 | Frontend |
 | Fadiya Tsabita | 11230910000062 | Evaluasi & Hukum Tajwid |
 | Syifa Auliyah Kusumawardani | 11230910000114 | Backend, API & Database |
-

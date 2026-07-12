@@ -97,77 +97,94 @@ def ask(req: AskRequest):
     conn = get_conn()
     cursor = conn.cursor()
 
-    # kalau frontend belum bikin session, auto-buatkan supaya tidak error
-    session_id = req.session_id
-    if session_id is None:
-        cursor.execute("INSERT INTO sessions (user_id) VALUES (NULL)")
-        session_id = cursor.lastrowid
+    try:
+        # kalau frontend belum bikin session, auto-buatkan supaya tidak error
+        session_id = req.session_id
+        if session_id is None:
+            cursor.execute("INSERT INTO sessions (user_id) VALUES (NULL)")
+            session_id = cursor.lastrowid
+            conn.commit()
+        else:
+            cursor.execute("SELECT id FROM sessions WHERE id = %s", (session_id,))
+            if cursor.fetchone() is None:
+                raise HTTPException(
+                    status_code=400,
+                    detail=f"session_id {session_id} tidak ditemukan. "
+                           f"Kirim session_id: null untuk membuat sesi baru otomatis."
+                )
+
+        # 1. simpan pertanyaan
+        cursor.execute(
+            "INSERT INTO questions (session_id, pertanyaan) VALUES (%s, %s)",
+            (session_id, req.pertanyaan),
+        )
+        question_id = cursor.lastrowid
         conn.commit()
 
-    # 1. simpan pertanyaan
-    cursor.execute(
-        "INSERT INTO questions (session_id, pertanyaan) VALUES (%s, %s)",
-        (session_id, req.pertanyaan),
-    )
-    question_id = cursor.lastrowid
-    conn.commit()
+        # 2. retrieval
+        t0 = time.perf_counter()
+        konteks = retrieve_tajwid(req.pertanyaan, top_k=5)
+        t1 = time.perf_counter()
+        print(f"[TIMING] retrieval: {t1 - t0:.2f} detik")
 
-    # 2. retrieval
-    t0 = time.perf_counter()
-    konteks = retrieve_tajwid(req.pertanyaan, top_k=5)
-    t1 = time.perf_counter()
-    print(f"[TIMING] retrieval: {t1 - t0:.2f} detik")
+        # 3. simpan dokumen yang di-retrieve
+        for urutan, item in enumerate(konteks, start=1):
+            cursor.execute(
+                """INSERT INTO retrieved_docs (question_id, hukum_tajwid_id, similarity_score, urutan)
+                   VALUES (%s, %s, %s, %s)""",
+                (question_id, item.get("id"), item.get("similarity_score"), urutan),
+            )
+        conn.commit()
 
-    # 3. simpan dokumen yang di-retrieve
-    for urutan, item in enumerate(konteks, start=1):
+        # 4. generate jawaban — pilih LLM sesuai request (default: groq)
+        t2 = time.perf_counter()
+        if (req.model or "groq").lower() == "gemini":
+            hasil = generate_answer_gemini(req.pertanyaan, konteks)
+            nama_model = "gemini-3-flash-preview"
+        else:
+            hasil = generate_answer_groq(req.pertanyaan, konteks)
+            nama_model = "llama-3.3-70b-versatile"
+        t3 = time.perf_counter()
+        print(f"[TIMING] generate ({nama_model}): {t3 - t2:.2f} detik")
+
+        # 5. strict grounding check
+        t4 = time.perf_counter()
+        grounding = check_grounding(hasil["jawaban"], konteks)
+        t5 = time.perf_counter()
+        print(f"[TIMING] grounding check: {t5 - t4:.2f} detik")
+        print(f"[TIMING] TOTAL (tanpa DB): {t5 - t0:.2f} detik")
+
+        # 6. simpan jawaban + hasil grounding
         cursor.execute(
-            """INSERT INTO retrieved_docs (question_id, hukum_tajwid_id, similarity_score, urutan)
-               VALUES (%s, %s, %s, %s)""",
-            (question_id, item.get("id"), item.get("similarity_score"), urutan),
+            """INSERT INTO answers (question_id, jawaban, model_llm, is_grounded, grounding_score)
+               VALUES (%s, %s, %s, %s, %s)""",
+            (question_id, hasil["jawaban"], nama_model,
+             grounding["is_grounded"], grounding["grounding_score"]),
         )
-    conn.commit()
+        answer_id = cursor.lastrowid
+        conn.commit()
 
-    # 4. generate jawaban — pilih LLM sesuai request (default: groq)
-    t2 = time.perf_counter()
-    if (req.model or "groq").lower() == "gemini":
-        hasil = generate_answer_gemini(req.pertanyaan, konteks)
-        nama_model = "gemini-3-flash-preview"
-    else:
-        hasil = generate_answer_groq(req.pertanyaan, konteks)
-        nama_model = "llama-3.3-70b-versatile"
-    t3 = time.perf_counter()
-    print(f"[TIMING] generate ({nama_model}): {t3 - t2:.2f} detik")
+        return {
+            "question_id": question_id,
+            "answer_id": answer_id,
+            "session_id": session_id,
+            "model_digunakan": nama_model,
+            "jawaban": hasil["jawaban"],
+            "sumber": hasil["sumber"],
+            "is_grounded": grounding["is_grounded"],
+            "grounding_score": grounding["grounding_score"],
+        }
 
-    # 5. strict grounding check
-    t4 = time.perf_counter()
-    grounding = check_grounding(hasil["jawaban"], konteks)
-    t5 = time.perf_counter()
-    print(f"[TIMING] grounding check: {t5 - t4:.2f} detik")
-    print(f"[TIMING] TOTAL (tanpa DB): {t5 - t0:.2f} detik")
-
-    # 6. simpan jawaban + hasil grounding
-    cursor.execute(
-        """INSERT INTO answers (question_id, jawaban, model_llm, is_grounded, grounding_score)
-           VALUES (%s, %s, %s, %s, %s)""",
-        (question_id, hasil["jawaban"], nama_model,
-         grounding["is_grounded"], grounding["grounding_score"]),
-    )
-    answer_id = cursor.lastrowid
-    conn.commit()
-
-    cursor.close()
-    conn.close()
-
-    return {
-        "question_id": question_id,
-        "answer_id": answer_id,
-        "session_id": session_id,
-        "model_digunakan": nama_model,
-        "jawaban": hasil["jawaban"],
-        "sumber": hasil["sumber"],
-        "is_grounded": grounding["is_grounded"],
-        "grounding_score": grounding["grounding_score"],
-    }
+    except HTTPException:
+        conn.rollback()
+        raise
+    except Exception as e:
+        conn.rollback()
+        print(f"[ERROR] /ask gagal: {e}")
+        raise HTTPException(status_code=500, detail=f"Terjadi kesalahan internal: {e}")
+    finally:
+        cursor.close()
+        conn.close()
 
 
 @app.post("/feedback")

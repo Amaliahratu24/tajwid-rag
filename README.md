@@ -179,7 +179,7 @@ Memuat model embedding lokal...
 Memuat data tajwid...
 Menghubungkan ke ChromaDB...
 Membuat embedding dan menyimpan ke ChromaDB...
-Selesai. 44 entri berhasil di-embed dan disimpan ke ChromaDB.
+Selesai. 92 entri berhasil di-embed dan disimpan ke ChromaDB.
 ```
 
 ### 8. Coba lewat CLI (opsional, untuk tes cepat)
@@ -251,7 +251,8 @@ kanan atas untuk pilih model **Groq** atau **Gemini**.
 Sistem diuji memakai dataset **50 pertanyaan** (`qna_dataset_50.json`) — 44
 pertanyaan **in-domain** (jawabannya ada di database tajwid An-Naba') dan 6
 pertanyaan **out-of-domain** (sengaja di luar cakupan, untuk menguji apakah
-sistem menolak mengarang jawaban).
+sistem menolak mengarang jawaban). Basis pengetahuan tajwid sendiri terdiri
+dari **92 entri** hukum tajwid yang mencakup seluruh 40 ayat Surah An-Naba'.
 
 ### Cara menjalankan evaluasi
 
@@ -284,16 +285,28 @@ tersimpan di `hasil_evaluasi.csv`.
 
 | Model | ROUGE-L | BERTScore F1 | Faithfulness | Grounded (dari 50) |
 |---|---|---|---|---|
-| **Groq** (llama-3.3-70b-versatile) | 0.7350 | 0.8744 | 0.7879 | 46/50 |
-| **Gemini** (gemini-3-flash-preview) | 0.7816 | 0.8384 | 0.7378 | 50/50 |
+| **Groq** (llama-3.3-70b-versatile) | 0.6654 | 0.8480 | 0.7795 | 47/50 |
+| **Gemini** (gemini-3-flash-preview) | 0.6738 | 0.8041 | 0.7114 | 48/50 |
+
+**Hasil berdasarkan kategori pertanyaan:**
+
+| Model | Kategori | ROUGE-L | BERTScore F1 | Faithfulness | Grounded |
+|---|---|---|---|---|---|
+| Groq | In-domain (44 soal) | 0.6762 | 0.8533 | 0.7579 | 41/44 |
+| Groq | Out-of-domain (6 soal) | 0.5863 | 0.8086 | 0.9382 | 6/6 |
+| Gemini | In-domain (44 soal) | 0.6774 | 0.7989 | 0.6862 | 42/44 |
+| Gemini | Out-of-domain (6 soal) | 0.6470 | 0.8418 | 0.8962 | 6/6 |
 
 **Catatan singkat:**
-- **Gemini** unggul di ROUGE-L (susunan kata lebih dekat ke jawaban rujukan)
-  dan konsisten lolos grounding check di semua 50 pertanyaan, tapi jauh lebih
-  lambat per-request (bisa >20 detik) dibanding Groq.
-- **Groq** unggul di BERTScore F1 (makna jawaban) dan Faithfulness, jauh
-  lebih cepat (di bawah 1 detik per jawaban), tapi 4 dari 50 jawabannya
-  gagal lolos strict grounding check.
+- Kedua model **konsisten menolak menjawab** pada seluruh 6 pertanyaan
+  out-of-domain (6/6 grounded di kedua model), membuktikan mekanisme *strict
+  grounding* bekerja sesuai tujuan penelitian.
+- **Gemini** sedikit unggul di ROUGE-L, tapi **Groq unggul** di BERTScore F1
+  dan Faithfulness pada kategori in-domain, serta jauh lebih cepat per-request
+  (di bawah 1 detik) dibanding Gemini (bisa >20 detik).
+- Dari 44 pertanyaan in-domain, Groq gagal grounding pada 3 pertanyaan dan
+  Gemini pada 2 pertanyaan — keduanya berada pada tingkat kegagalan yang
+  relatif kecil dan sebanding.
 - **Keterbatasan Gemini free tier:** model `gemini-3-flash-preview` di Google
   AI Studio dibatasi **20 request per hari** (`GenerateRequestsPerDayPerProjectPerModel-FreeTier`),
   jauh lebih ketat dibanding Groq. Ini perlu diperhitungkan kalau sistem

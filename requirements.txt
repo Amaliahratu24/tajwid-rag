@@ -103,3 +103,5 @@ google-generativeai
 uvicorn
 groq
 fastapi
+rouge-score
+bert-score

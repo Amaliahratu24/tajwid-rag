@@ -41,15 +41,13 @@ tajwid-rag/
     │
     ├── generation/
     │   ├── generator.py           # kirim ke LLM Groq, hasilkan jawaban
-    │   └── llm_gemini.py          # kirim ke LLM Gemini, hasilkan jawaban
+    │   └── llm_gemini.py          # kirim ke LLM Gemini, hasilkan jawaban 
     │
     ├── grounding/
     │   └── strict_grounding.py    # verifikasi jawaban benar2 didukung konteks
     │
     ├── shared/
     │   └── embedding_model.py     # satu instance model embedding dipakai bareng oleh retriever.py & strict_grounding.py
-    │
-    ├── inspect_chroma.py          # (opsional) utilitas untuk cek isi ChromaDB dari terminal, tidak dipakai saat runtime
     │
     ├── database/
     │   └── setup_app_tables.py    # bikin 6 tabel: users, sessions, questions, retrieved_docs, answers, feedback
@@ -61,39 +59,16 @@ tajwid-rag/
 ## ✅ Prasyarat
 
 Sebelum mulai, pastikan sudah terinstall:
-- **Python 3.12** (versi yang sudah diuji berjalan lancar dengan proyek ini)
+- **Python 3.10+** ([python.org](https://python.org))
 - **XAMPP** (Apache + MySQL) — [apachefriends.org](https://www.apachefriends.org)
+- **Git** atau **GitHub Desktop**
 - Akun **Groq Cloud** untuk API key gratis — [console.groq.com](https://console.groq.com)
 - Akun **Google AI Studio** untuk API key Gemini gratis — [aistudio.google.com/api-keys](https://aistudio.google.com/api-keys)
 
-> Catatan: proyek ini bisa didapat dengan **clone lewat Git** atau **download
-> ZIP langsung dari GitHub**. Kalau tidak familiar dengan Git, download ZIP
-> jauh lebih simpel dan sudah terbukti bisa dijalankan penuh mengikuti langkah
-> di bawah.
-
-> ⚠️ **Penting soal folder `tajwid-rag-backend/`:** kalau hasil ekstrak ZIP
-> kamu punya folder tambahan bernama `tajwid-rag-backend/` di dalam root
-> repo (berisi salinan lama `main.py`, `src/`, `data/`, `requirements.txt`),
-> itu adalah **folder versi lama/tidak terpakai** yang tertinggal saat
-> pengembangan (masih pakai model `gemini-2.0-flash`, requirements-nya juga
-> belum ada `rouge-score`/`bert-score`, dan tidak punya folder `frontend/`
-> sama sekali). Semua langkah di README ini merujuk ke file-file di **root
-> repo**, bukan ke folder `tajwid-rag-backend/`. Supaya tidak bingung mana
-> yang harus dijalankan, folder ini **aman dan disarankan untuk dihapus**
-> sebelum lanjut ke langkah instalasi.
-
 ## 🚀 Langkah Instalasi
 
-### 1. Dapatkan source code
+### 1. Clone repo
 
-**Opsi A — Download ZIP (paling mudah, tidak perlu install Git):**
-
-1. Buka halaman repo di GitHub.
-2. Klik tombol hijau **Code** → **Download ZIP**.
-3. Ekstrak file ZIP tersebut (misalnya ke folder `Downloads`).
-4. Masuk ke folder hasil ekstrak lewat terminal/PowerShell.
-
-**Opsi B — Clone lewat Git:**
 ```bash
 git clone https://github.com/Amaliahratu24/tajwid-rag.git
 cd tajwid-rag
@@ -163,26 +138,7 @@ Ini membuat tabel `users`, `sessions`, `questions`, `retrieved_docs`,
 Kolom `model_llm` di tabel `answers` mencatat model mana (Groq/Gemini)
 yang dipakai untuk tiap jawaban.
 
-### 7. Build embeddings ke ChromaDB (wajib sebelum menjalankan API)
-
-```bash
-python src/ingestion/build_embeddings.py
-```
-
-Skrip ini memuat model embedding lokal (akan otomatis download model dari
-Hugging Face saat pertama kali dijalankan), lalu membuat embedding dari data
-tajwid dan menyimpannya ke ChromaDB.
-
-Output yang diharapkan:
-```
-Memuat model embedding lokal...
-Memuat data tajwid...
-Menghubungkan ke ChromaDB...
-Membuat embedding dan menyimpan ke ChromaDB...
-Selesai. 92 entri berhasil di-embed dan disimpan ke ChromaDB.
-```
-
-### 8. Coba lewat CLI (opsional, untuk tes cepat)
+### 7. Coba lewat CLI (opsional, untuk tes cepat)
 
 ```bash
 python main.py
@@ -193,7 +149,7 @@ Ketik pertanyaan **lengkap** (bukan cuma angka nomor), contoh:
 Sebutkan contoh Mad Thabi'i dalam surah An-Naba
 ```
 
-### 9. Jalankan API (backend)
+### 8. Jalankan API (backend)
 
 ```bash
 uvicorn src.api.main_api:app --reload
@@ -203,44 +159,20 @@ Biarkan terminal ini tetap terbuka selama server berjalan. Buka
 `http://localhost:8000/docs` di browser untuk melihat dan mencoba semua
 endpoint yang tersedia secara interaktif.
 
+### 9. Buka Frontend (website)
 
-Contoh log normal saat server jalan dan menerima request dari frontend:
-```
-INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-INFO:     Application startup complete.
-[TIMING] retrieval: 14.20 detik
-[TIMING] generate (llama-3.3-70b-versatile): 0.80 detik
-[TIMING] grounding check: 0.35 detik
-[TIMING] TOTAL (tanpa DB): 15.37 detik
-INFO:     127.0.0.1:51738 - "POST /ask HTTP/1.1" 200 OK
-```
-Request pertama ke tiap model biasanya lebih lambat (proses load model
-embedding pertama kali), request selanjutnya jauh lebih cepat.
+Pastikan API di Langkah 8 masih berjalan (terminal jangan ditutup), lalu:
 
-### 10. Buka Frontend (website)
+1. Buka folder `frontend/` di File Explorer
+2. Klik dua kali file `index.html` — akan terbuka otomatis di browser
 
-Pastikan API di Langkah 9 masih berjalan (terminal jangan ditutup). **Buka
-terminal baru** (jangan tutup terminal API), lalu:
-
+Atau, kalau `index.html` tidak mau langsung connect ke API (karena
+kadang browser membatasi file lokal), jalankan lewat server sederhana:
 ```bash
 cd frontend
 python -m http.server 5500
 ```
-
-Lalu buka `http://localhost:5500` di browser.
-
-Output normal saat server frontend jalan:
-```
-Serving HTTP on :: port 5500 (http://[::]:5500/) ...
-"GET / HTTP/1.1" 200 -
-"GET /style.css HTTP/1.1" 200 -
-"GET /script.js HTTP/1.1" 200 -
-"GET /favicon.ico" 404 -
-```
-
-Alternatif lain: buka folder `frontend/` di File Explorer, lalu klik dua kali
-`index.html` langsung — tapi kadang browser membatasi koneksi API dari file
-lokal (`file://`), jadi cara `http.server` di atas lebih disarankan.
+lalu buka `http://localhost:5500` di browser.
 
 Website akan otomatis terhubung ke API di `http://localhost:8000` (sudah
 diatur di `frontend/script.js`, baris `API_URL`). Ada dropdown di pojok
@@ -251,8 +183,7 @@ kanan atas untuk pilih model **Groq** atau **Gemini**.
 Sistem diuji memakai dataset **50 pertanyaan** (`qna_dataset_50.json`) — 44
 pertanyaan **in-domain** (jawabannya ada di database tajwid An-Naba') dan 6
 pertanyaan **out-of-domain** (sengaja di luar cakupan, untuk menguji apakah
-sistem menolak mengarang jawaban). Basis pengetahuan tajwid sendiri terdiri
-dari **92 entri** hukum tajwid yang mencakup seluruh 40 ayat Surah An-Naba'.
+sistem menolak mengarang jawaban).
 
 ### Cara menjalankan evaluasi
 
@@ -263,15 +194,8 @@ python eval.py
 
 Skrip ini **resumable** — kalau berhenti di tengah jalan (misalnya kena limit
 API), tinggal jalankan lagi `python eval.py` dan otomatis melanjutkan dari
-yang belum selesai, tanpa mengulang yang sudah berhasil. Kalau semua 100
-baris (50 soal × 2 model) sudah pernah berhasil sebelumnya, skrip akan
-menampilkan:
-```
-Ditemukan 100 hasil sebelumnya, akan dilewati (skip).
-SEMUA DATA LENGKAP (50 x 2 model).
-```
-dan langsung menampilkan ringkasan tanpa memanggil API lagi. Hasilnya
-tersimpan di `hasil_evaluasi.csv`.
+yang belum selesai, tanpa mengulang yang sudah berhasil. Hasilnya tersimpan
+di `hasil_evaluasi.csv` (100 baris = 50 pertanyaan × 2 model).
 
 ### Metrik yang digunakan
 
@@ -285,33 +209,18 @@ tersimpan di `hasil_evaluasi.csv`.
 
 | Model | ROUGE-L | BERTScore F1 | Faithfulness | Grounded (dari 50) |
 |---|---|---|---|---|
-| **Groq** (llama-3.3-70b-versatile) | 0.6654 | 0.8480 | 0.7795 | 47/50 |
-| **Gemini** (gemini-3-flash-preview) | 0.6738 | 0.8041 | 0.7114 | 48/50 |
-
-**Hasil berdasarkan kategori pertanyaan:**
-
-| Model | Kategori | ROUGE-L | BERTScore F1 | Faithfulness | Grounded |
-|---|---|---|---|---|---|
-| Groq | In-domain (44 soal) | 0.6762 | 0.8533 | 0.7579 | 41/44 |
-| Groq | Out-of-domain (6 soal) | 0.5863 | 0.8086 | 0.9382 | 6/6 |
-| Gemini | In-domain (44 soal) | 0.6774 | 0.7989 | 0.6862 | 42/44 |
-| Gemini | Out-of-domain (6 soal) | 0.6470 | 0.8418 | 0.8962 | 6/6 |
+| **Groq** (llama-3.3-70b-versatile) | 0.7350 | 0.8744 | 0.7879 | 46/50 |
+| **Gemini** (gemini-3-flash-preview) | 0.7816 | 0.8384 | 0.7378 | 50/50 |
 
 **Catatan singkat:**
-- Kedua model **konsisten menolak menjawab** pada seluruh 6 pertanyaan
-  out-of-domain (6/6 grounded di kedua model), membuktikan mekanisme *strict
-  grounding* bekerja sesuai tujuan penelitian.
-- **Gemini** sedikit unggul di ROUGE-L, tapi **Groq unggul** di BERTScore F1
-  dan Faithfulness pada kategori in-domain, serta jauh lebih cepat per-request
-  (di bawah 1 detik) dibanding Gemini (bisa >20 detik).
-- Dari 44 pertanyaan in-domain, Groq gagal grounding pada 3 pertanyaan dan
-  Gemini pada 2 pertanyaan — keduanya berada pada tingkat kegagalan yang
-  relatif kecil dan sebanding.
+- **Gemini** unggul di ROUGE-L (susunan kata lebih dekat ke jawaban rujukan)
+  dan konsisten lolos grounding check di semua 50 pertanyaan.
+- **Groq** unggul di BERTScore F1 (makna jawaban) dan Faithfulness, tapi 4
+  dari 50 jawabannya gagal lolos strict grounding check.
 - **Keterbatasan Gemini free tier:** model `gemini-3-flash-preview` di Google
   AI Studio dibatasi **20 request per hari** (`GenerateRequestsPerDayPerProjectPerModel-FreeTier`),
   jauh lebih ketat dibanding Groq. Ini perlu diperhitungkan kalau sistem
   dipakai untuk trafik lebih besar dari skala tugas kuliah.
-
 
 ## 👥 Kontributor
 

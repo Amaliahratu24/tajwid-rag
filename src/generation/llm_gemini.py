@@ -60,11 +60,12 @@ JAWABAN:"""
         prompt,
         generation_config=genai.types.GenerationConfig(temperature=0.1)
     )
+    jawaban_text = response.text
 
     sumber_list = list(set([item["sumber"] for item in konteks]))
 
     return {
-        "jawaban": response.text,
+        "jawaban": jawaban_text,
         "sumber": sumber_list,
         "konteks_digunakan": len(konteks)
     }

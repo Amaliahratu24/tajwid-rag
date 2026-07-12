@@ -80,8 +80,13 @@ def retrieve_dari_chroma(query: str, top_k: int = 5):
             SELECT * FROM hukum_tajwid
             WHERE ayat_number = %s AND lafaz_arab = %s
         """, (metadata["ayat_number"], metadata["lafaz_arab"]))
-        row = cursor.fetchone()
-        if row:
+        # PENTING: fetchall(), bukan fetchone() — data 92 entri punya
+        # beberapa lafaz yang sama persis dipecah jadi beberapa aturan
+        # tajwid berbeda. fetchone() menyisakan baris belum terbaca,
+        # bikin query berikutnya di loop ini error "Unread result found".
+        rows = cursor.fetchall()
+        if rows:
+            row = rows[0]
             row["similarity_score"] = results["distances"][0][i]
             konteks.append(row)
     cursor.close()

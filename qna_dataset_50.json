@@ -2,9 +2,9 @@
   {
     "id": 1,
     "pertanyaan": "Apa hukum tajwid pada lafaz عَمَّ di ayat 1 surah An-Naba?",
-    "jawaban_benar": "Lafaz عَمَّ ('amma) pada ayat 1 surah An-Naba' termasuk hukum Idgham Bighunnah, kategori Nun Mati dan Tanwin. Berasal dari 'an + ma'. Nun mati bertemu huruf mim, dibaca lebur dengan dengung (ghunnah) selama 2 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "jawaban_benar": "Lafaz عَمَّ ('amma) pada ayat 1 surah An-Naba' termasuk hukum Ghunnah, kategori Ghunnah. Berasal dari 'an + ma'. Mim tasydid, dibaca lebur dengan dengung (ghunnah) selama 2 harakat. (Sumber: Kitab Hidayatus Sibyan)",
     "tipe": "in_domain",
-    "hukum_seharusnya": "Idgham Bighunnah",
+    "hukum_seharusnya": "Ghunnah",
     "ayat_rujukan": 1
   },
   {
@@ -18,33 +18,33 @@
   {
     "id": 3,
     "pertanyaan": "Bagaimana cara membaca lafaz النَّبَإِ pada ayat ke-2?",
-    "jawaban_benar": "Lafaz النَّبَإِ (an-naba-i) pada ayat 2 surah An-Naba' termasuk hukum Idgham Syamsiyyah, kategori Alif Lam. Alif lam bertemu huruf nun (huruf syamsiyyah), lam dibaca lebur/idgham ke dalam nun dan dibaca dengan tasydid. (Sumber: Kitab Hidayatus Sibyan)",
+    "jawaban_benar": "Lafaz النَّبَإِ (an-naba-i) pada ayat 2 surah An-Naba' termasuk hukum Alif Lam Syamsiyyah, kategori Alif Lam. Alif lam bertemu huruf nun (huruf syamsiyyah), lam dibaca lebur/idgham ke dalam nun dan dibaca dengan tasydid. (Sumber: Kitab Hidayatus Sibyan)",
     "tipe": "in_domain",
-    "hukum_seharusnya": "Idgham Syamsiyyah",
+    "hukum_seharusnya": "Alif Lam Syamsiyyah",
     "ayat_rujukan": 2
   },
   {
     "id": 4,
     "pertanyaan": "Sebutkan dan jelaskan hukum tajwid dari kata الْعَظِيمِ di ayat 2!",
-    "jawaban_benar": "Lafaz الْعَظِيمِ (al-'azhiim) pada ayat 2 surah An-Naba' termasuk hukum Izhar Qamariyyah, kategori Alif Lam. Alif lam bertemu huruf ain (huruf qamariyyah), lam dibaca jelas/izhar tanpa dilebur. (Sumber: Kitab Hidayatus Sibyan)",
+    "jawaban_benar": "Lafaz الْعَظِيمِ (al-'azhiim) pada ayat 2 surah An-Naba' termasuk hukum Alif Lam Qamariyyah, kategori Alif Lam. Alif lam bertemu huruf ain (huruf qamariyyah), lam dibaca jelas/izhar tanpa dilebur. (Sumber: Kitab Hidayatus Sibyan)",
     "tipe": "in_domain",
-    "hukum_seharusnya": "Izhar Qamariyyah",
+    "hukum_seharusnya": "Alif Lam Qamariyyah",
     "ayat_rujukan": 2
   },
   {
     "id": 5,
     "pertanyaan": "Mengapa lafaz الَّذِي pada ayat 3 dibaca demikian? Jelaskan hukumnya!",
-    "jawaban_benar": "Lafaz الَّذِي (alladzii) pada ayat 3 surah An-Naba' termasuk hukum Idgham Syamsiyyah, kategori Alif Lam. Alif lam bertemu huruf lam (huruf syamsiyyah), lam pertama dilebur ke lam berikutnya dan dibaca tasydid. (Sumber: Kitab Hidayatus Sibyan)",
+    "jawaban_benar": "Lafaz الَّذِي (alladzii) pada ayat 3 surah An-Naba' termasuk hukum Alif Lam Syamsiyyah, kategori Alif Lam. Alif lam bertemu huruf lam (huruf syamsiyyah), lam pertama dilebur ke lam berikutnya dan dibaca tasydid. (Sumber: Kitab Hidayatus Sibyan)",
     "tipe": "in_domain",
-    "hukum_seharusnya": "Idgham Syamsiyyah",
+    "hukum_seharusnya": "Alif Lam Syamsiyyah",
     "ayat_rujukan": 3
   },
   {
     "id": 6,
     "pertanyaan": "Apa hukum tajwid pada lafaz هُمْ فِيهِ di ayat 3 surah An-Naba?",
-    "jawaban_benar": "Lafaz هُمْ فِيهِ (hum fiih) pada ayat 3 surah An-Naba' termasuk hukum Idgham Bighunnah, kategori Nun Mati dan Tanwin. Mim mati bertemu huruf fa — ini sebenarnya izhar syafawi karena mim mati bertemu selain ba/mim, dibaca jelas. (Sumber: Kitab Hidayatus Sibyan)",
+    "jawaban_benar": "Lafaz هُمْ فِيهِ (hum fiih) pada ayat 3 surah An-Naba' termasuk hukum Izhar Syafawi, kategori Mim Sukun. Mim mati bertemu huruf fa, dibaca jelas karena mim mati bertemu selain ba/mim. (Sumber: Kitab Hidayatus Sibyan)",
     "tipe": "in_domain",
-    "hukum_seharusnya": "Idgham Bighunnah",
+    "hukum_seharusnya": "Izhar Syafawi",
     "ayat_rujukan": 3
   },
   {
@@ -66,9 +66,9 @@
   {
     "id": 9,
     "pertanyaan": "Sebutkan dan jelaskan hukum tajwid dari kata الْأَرْضَ di ayat 6!",
-    "jawaban_benar": "Lafaz الْأَرْضَ (al-ardha) pada ayat 6 surah An-Naba' termasuk hukum Izhar Qamariyyah, kategori Alif Lam. Alif lam bertemu hamzah (huruf qamariyyah), lam dibaca jelas. (Sumber: Kitab Hidayatus Sibyan)",
+    "jawaban_benar": "Lafaz الْأَرْضَ (al-ardha) pada ayat 6 surah An-Naba' termasuk hukum Alif Lam Qamariyyah, kategori Alif Lam. Alif lam bertemu hamzah (huruf qamariyyah), lam dibaca jelas. (Sumber: Kitab Hidayatus Sibyan)",
     "tipe": "in_domain",
-    "hukum_seharusnya": "Izhar Qamariyyah",
+    "hukum_seharusnya": "Alif Lam Qamariyyah",
     "ayat_rujukan": 6
   },
   {
@@ -82,9 +82,9 @@
   {
     "id": 11,
     "pertanyaan": "Apa hukum tajwid pada lafaz الْجِبَالَ di ayat 7 surah An-Naba?",
-    "jawaban_benar": "Lafaz الْجِبَالَ (al-jibaala) pada ayat 7 surah An-Naba' termasuk hukum Izhar Qamariyyah, kategori Alif Lam. Alif lam bertemu jim (huruf qamariyyah), lam dibaca jelas. (Sumber: Kitab Hidayatus Sibyan)",
+    "jawaban_benar": "Lafaz الْجِبَالَ (al-jibaala) pada ayat 7 surah An-Naba' termasuk hukum Alif Lam Qamariyyah, kategori Alif Lam. Alif lam bertemu jim (huruf qamariyyah), lam dibaca jelas. (Sumber: Kitab Hidayatus Sibyan)",
     "tipe": "in_domain",
-    "hukum_seharusnya": "Izhar Qamariyyah",
+    "hukum_seharusnya": "Alif Lam Qamariyyah",
     "ayat_rujukan": 7
   },
   {
@@ -161,18 +161,18 @@
   },
   {
     "id": 21,
-    "pertanyaan": "Apa hukum tajwid pada lafaz وَنَبَاتًا di ayat 15 surah An-Naba?",
-    "jawaban_benar": "Lafaz وَنَبَاتًا (wa nabaataa) pada ayat 15 surah An-Naba' termasuk hukum Mad Arid Lissukun, kategori Mad Far'i. Alif mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat. (Sumber: Kitab Hidayatus Sibyan)",
+    "pertanyaan": "Apa hukum tajwid pada lafaz وَنَبَاتًا di ayat 16 surah An-Naba?",
+    "jawaban_benar": "Lafaz وَنَبَاتًا (wa nabaataa) pada ayat 16 surah An-Naba' termasuk hukum Mad Arid Lissukun, kategori Mad Far'i. Huruf mad di akhir ayat diwaqafkan, dibaca panjang 2, 4, atau 6 harakat. (Sumber: Kitab Hidayatus Sibyan)",
     "tipe": "in_domain",
     "hukum_seharusnya": "Mad Arid Lissukun",
-    "ayat_rujukan": 15
+    "ayat_rujukan": 16
   },
   {
     "id": 22,
     "pertanyaan": "Jelaskan hukum bacaan lafaz الْفَصْلِ pada ayat 17 An-Naba!",
-    "jawaban_benar": "Lafaz الْفَصْلِ (al-fashl) pada ayat 17 surah An-Naba' termasuk hukum Izhar Qamariyyah, kategori Alif Lam. Alif lam bertemu fa (huruf qamariyyah), lam dibaca jelas. (Sumber: Kitab Hidayatus Sibyan)",
+    "jawaban_benar": "Lafaz الْفَصْلِ (al-fashl) pada ayat 17 surah An-Naba' termasuk hukum Alif Lam Qamariyyah, kategori Alif Lam. Alif lam bertemu fa (huruf qamariyyah), lam dibaca jelas. (Sumber: Kitab Hidayatus Sibyan)",
     "tipe": "in_domain",
-    "hukum_seharusnya": "Izhar Qamariyyah",
+    "hukum_seharusnya": "Alif Lam Qamariyyah",
     "ayat_rujukan": 17
   },
   {
@@ -306,17 +306,17 @@
   {
     "id": 39,
     "pertanyaan": "Sebutkan dan jelaskan hukum tajwid dari kata الرَّحْمَٰنِ di ayat 37!",
-    "jawaban_benar": "Lafaz الرَّحْمَٰنِ (ar-rahmaani) pada ayat 37 surah An-Naba' termasuk hukum Idgham Syamsiyyah, kategori Alif Lam. Alif lam bertemu huruf ra (huruf syamsiyyah), lam dilebur ke dalam ra dan dibaca tasydid. (Sumber: Kitab Hidayatus Sibyan)",
+    "jawaban_benar": "Lafaz الرَّحْمَٰنِ (ar-rahmaani) pada ayat 37 surah An-Naba' termasuk hukum Alif Lam Syamsiyyah, kategori Alif Lam. Alif lam bertemu huruf ra (huruf syamsiyyah), lam dilebur ke dalam ra dan dibaca tasydid. (Sumber: Kitab Hidayatus Sibyan)",
     "tipe": "in_domain",
-    "hukum_seharusnya": "Idgham Syamsiyyah",
+    "hukum_seharusnya": "Alif Lam Syamsiyyah",
     "ayat_rujukan": 37
   },
   {
     "id": 40,
     "pertanyaan": "Mengapa lafaz الرُّوحُ pada ayat 38 dibaca demikian? Jelaskan hukumnya!",
-    "jawaban_benar": "Lafaz الرُّوحُ (ar-ruuhu) pada ayat 38 surah An-Naba' termasuk hukum Idgham Syamsiyyah, kategori Alif Lam. Alif lam bertemu huruf ra (huruf syamsiyyah), lam dilebur ke dalam ra dan dibaca tasydid. (Sumber: Kitab Hidayatus Sibyan)",
+    "jawaban_benar": "Lafaz الرُّوحُ (ar-ruuhu) pada ayat 38 surah An-Naba' termasuk hukum Alif Lam Syamsiyyah, kategori Alif Lam. Alif lam bertemu huruf ra (huruf syamsiyyah), lam dilebur ke dalam ra dan dibaca tasydid. (Sumber: Kitab Hidayatus Sibyan)",
     "tipe": "in_domain",
-    "hukum_seharusnya": "Idgham Syamsiyyah",
+    "hukum_seharusnya": "Alif Lam Syamsiyyah",
     "ayat_rujukan": 38
   },
   {

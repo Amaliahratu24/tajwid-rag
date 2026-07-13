@@ -254,7 +254,7 @@ pertanyaan **out-of-domain** (sengaja di luar cakupan, untuk menguji apakah
 sistem menolak mengarang jawaban).
 
 > Basis data hukum tajwid (`data/tajwid_annaba.json`) sudah diperluas dari
-> 42 menjadi **92 entri** (rata-rata ~2,4 hukum tajwid per ayat, mencakup 38
+> 44 menjadi **92 entri** (rata-rata ~2,4 hukum tajwid per ayat, mencakup 38
 > dari 40 ayat). Saat menambah/mengubah entri di file ini, pastikan
 > juga menjalankan ulang langkah 5–7 di atas (`setup_database.py`,
 > `build_embeddings.py`) sebelum evaluasi ulang, dan cek apakah istilah

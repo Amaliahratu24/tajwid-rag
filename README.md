@@ -62,7 +62,7 @@ tajwid-rag/
 
 Sebelum mulai, pastikan sudah terinstall:
 - **Python 3.12** (versi yang sudah diuji berjalan lancar dengan proyek ini)
-- **XAMPP** (Apache + MySQL) — [apachefriends.org](https://www.apachefriends.org)
+- **XAMPP** (Apache + MySQL) 
 - Akun **Groq Cloud** untuk API key gratis — [console.groq.com](https://console.groq.com)
 - Akun **Google AI Studio** untuk API key Gemini gratis — [aistudio.google.com/api-keys](https://aistudio.google.com/api-keys)
 
@@ -255,7 +255,7 @@ sistem menolak mengarang jawaban).
 
 > Basis data hukum tajwid (`data/tajwid_annaba.json`) sudah diperluas dari
 > 44 menjadi **92 entri** (rata-rata ~2,4 hukum tajwid per ayat, mencakup 38
-> dari 40 ayat). Kalau kamu menambah/mengubah entri di file ini, pastikan
+> dari 40 ayat). Saat menambah/mengubah entri di file ini, pastikan
 > juga menjalankan ulang langkah 5–7 di atas (`setup_database.py`,
 > `build_embeddings.py`) sebelum evaluasi ulang, dan cek apakah istilah
 > hukum di `qna_dataset_50.json` masih konsisten dengan penamaan terbaru.
@@ -309,11 +309,8 @@ tersimpan di `hasil_evaluasi.csv`.
   dipakai untuk trafik lebih besar dari skala tugas kuliah.
 
 > **Catatan versi:** Angka final di atas sudah memakai `qna_dataset_50.json`
-> yang telah dikoreksi (6 soal — ID 3, 4, 5, 9, 11, 22 — yang sebelumnya
-> memakai istilah hukum lama "Idgham Syamsiyyah"/"Izhar Qamariyyah" sudah
-> disesuaikan menjadi "Alif Lam Syamsiyyah"/"Alif Lam Qamariyyah" agar
-> konsisten dengan `data/tajwid_annaba.json` (92 entri). Kalau kamu
-> menjalankan ulang evaluasi setelah perubahan data, jangan lupa jalankan
+> yang telah dikoreksi agar konsisten dengan `data/tajwid_annaba.json` (92 entri).
+> Saat menjalankan ulang evaluasi setelah perubahan data, jangan lupa jalankan
 > ulang `python src/ingestion/build_embeddings.py` (dan
 > `python src/ingestion/setup_database.py` kalau isi MySQL juga perlu
 > disegarkan) sebelum menjalankan `eval.py`, supaya hasil retrieval memakai

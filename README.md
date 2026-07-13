@@ -180,8 +180,8 @@ kanan atas untuk pilih model **Groq** atau **Gemini**.
 
 ## 📊 Evaluasi
 
-Sistem diuji memakai dataset **50 pertanyaan** (`qna_dataset_50.json`) — 44
-pertanyaan **in-domain** (jawabannya ada di database tajwid An-Naba') dan 6
+Sistem diuji memakai dataset **50 pertanyaan** (`qna_dataset_50.json`) — 46
+pertanyaan **in-domain** (jawabannya ada di database tajwid An-Naba') dan 4
 pertanyaan **out-of-domain** (sengaja di luar cakupan, untuk menguji apakah
 sistem menolak mengarang jawaban).
 

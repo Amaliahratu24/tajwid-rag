@@ -291,18 +291,19 @@ tersimpan di `hasil_evaluasi.csv`.
 
 | Model | ROUGE-L | BERTScore F1 | Faithfulness | Grounded (dari 50) |
 |---|---|---|---|---|
-| **Groq** (llama-3.3-70b-versatile) | 0.6908 | 0.8561 | 0.7824 | 46/50 |
-| **Gemini** (gemini-3-flash-preview) | 0.7002 | 0.8113 | 0.7066 | 48/50 |
+| **Groq** (llama-3.3-70b-versatile) | 0.7176 | 0.8679 | 0.7760 | 48/50 |
+| **Gemini** (gemini-3-flash-preview) | 0.7159 | 0.8188 | 0.7214 | 50/50 |
 
 **Catatan singkat:**
-- **Gemini** sedikit unggul di ROUGE-L (susunan kata sedikit lebih dekat ke jawaban rujukan), tapi jauh lebih lambat per-request (bisa >20 detik) dibanding Groq.
-- **Groq** unggul di BERTScore F1 (makna jawaban) dan Faithfulness, jauh
-  lebih cepat (di bawah 1 detik per jawaban).
-- Kedua model **tidak lagi 100% grounded**: Groq 46/50 dan Gemini 48/50.
-  Sebelumnya (saat basis data masih 44 entri) Gemini sempat mencatat 50/50,
-  tapi setelah basis data tajwid diperluas menjadi 92 entri (rata-rata ~2,4
-  hukum per ayat), variasi dan kompleksitas konteks yang perlu dicocokkan
-  meningkat, sehingga sedikit menurunkan tingkat grounding kedua model.
+- **Groq** dan **Gemini** kini nyaris sama di ROUGE-L, dengan **Groq** sedikit unggul di BERTScore F1 (makna jawaban) dan jauh lebih cepat per-request (di bawah 1 detik) dibanding Gemini (bisa >20 detik).
+- **Gemini** kembali mencatat **grounded 50/50**, sementara **Groq** 48/50.
+- Angka-angka di atas didapat setelah `qna_dataset_50.json` dikoreksi ulang
+  supaya konsisten dengan `data/tajwid_annaba.json` (92 entri). Pada evaluasi
+  sebelumnya (sebelum koreksi dataset ini), grounding sempat turun menjadi
+  Groq 46/50 dan Gemini 48/50 akibat variasi dan kompleksitas konteks yang
+  meningkat seiring perluasan basis data tajwid dari 44 ke 92 entri. Setelah
+  dataset soal disesuaikan ulang, Gemini kembali 100% grounded dan Groq juga
+  sedikit membaik di semua metrik.
 - **Keterbatasan Gemini free tier:** model `gemini-3-flash-preview` di Google
   AI Studio dibatasi **20 request per hari** (`GenerateRequestsPerDayPerProjectPerModel-FreeTier`),
   jauh lebih ketat dibanding Groq. Ini perlu diperhitungkan kalau sistem

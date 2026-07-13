@@ -279,6 +279,16 @@ SEMUA DATA LENGKAP (50 x 2 model).
 dan langsung menampilkan ringkasan tanpa memanggil API lagi. Hasilnya
 tersimpan di `hasil_evaluasi.csv`.
 
+### Kapan menjalankan `eval.py` vs `compute_bertscore.py`
+
+`eval.py` bisa dijalankan kapan saja, termasuk berulang kali (otomatis skip
+yang sudah ada di CSV). `compute_bertscore.py` baru dijalankan **setelah**
+`hasil_evaluasi.csv` lengkap 100 baris (50 Groq + 50 Gemini):
+
+```bash
+python compute_bertscore.py
+```
+
 ### Metrik yang digunakan
 
 | Metrik | Mengukur |
